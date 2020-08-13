@@ -36,12 +36,25 @@ const buzzwords = {
   "conceptualism",
   "eyecandy",
   "visualisation",
-  "minimum viable product",
   "magic",
   "shiny",
+  "real life",
+  "the 'now'",
+  "living",
+  "truth",
+  "nature",
+  "ego",
+  "petit",
+  "celebrity",
+  "chillax",
+  "lofi",
+  "reality",
+  "context"
+
   ],
 
 buzzTwo: [
+  "defied",
   "refined",
   "redefined",
   "overhauled",
@@ -62,7 +75,7 @@ buzzTwo: [
   "stylised",
   "exclusive",
   "serialized",
-  "coceptualised",
+  "conceptualised",
   "unleashed",
   "inverted",
   "1995",
@@ -71,6 +84,12 @@ buzzTwo: [
   "awakened",
   "visualised",
   "realised",
+  "compressed",
+  "cubed",
+  "chilled",
+  "to the MAX",
+  "reprogrammed",
+  "& chill"
 ]
 };
 
