@@ -16,14 +16,14 @@ const BuzzContainer = styled.div`
 
 const FontOne = styled.span`
 font-family: 'Lato';
-font-size: 2.5em;
+font-size: 2.2em;
 color: white;
 `;
 
 const FontTwo = styled.span`
 margin: 0 0 0 20px;
 font-family: 'Contrail One';
-font-size: 2.5em;
+font-size: 2.2em;
 color: white;
 `;
 
