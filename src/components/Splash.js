@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import Buzzphrase from './Buzzphrase.js';
 
 const SplashContainer = styled.div`
-  height: calc(100vh - 60px);
+  height: calc(100vh - 60px - 20px);
   width: 100vw;
   margin: 60px 0 0 0;
+  padding: 20px 0 0 0;
   background: black;
   display: flex;
   flex-flow: column nowrap;
@@ -16,7 +17,7 @@ const SplashContainer = styled.div`
 const ImageFrame = styled.div`
   height: 340px;
   width: 340px;
-  margin: 56px;
+  margin: 56px 0 0 0;
   background: url('./images/frame-1-brush-teal.png');
   background-size: contain;
   display: flex;

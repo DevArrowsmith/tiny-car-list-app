@@ -7,7 +7,7 @@ const NavbarContainer = styled.div`
 	left: 0;
 	height: 60px;
 	width: 100vw;
-	background: black;
+	background: #212121;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
@@ -15,7 +15,7 @@ const NavbarContainer = styled.div`
 
 	div {
 		height: 100%;
-		margin: 0 30px 0 30px;
+		margin: 0 15px 0 15px;
 		background: none;
 		display: flex;
 		flex-flow: row nowrap;
@@ -26,6 +26,7 @@ const NavbarContainer = styled.div`
 
 const NavHeader = styled.span`
 	color: white;
+	font-size: 1.5em;
 	font-weight: bold;
 	font-family: 'Contrail One', cursive;
 `;
