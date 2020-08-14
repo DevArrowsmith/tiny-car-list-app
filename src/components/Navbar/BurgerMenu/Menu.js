@@ -5,12 +5,13 @@ import { bool } from 'prop-types';
 
 export const StyledMenu = styled.nav`
   position: absolute;
+  z-index: 2;
   top: 60px;
   right: 0;
   height: calc(100vh - 60px - 40px);
   width: 260px;
   padding: 20px 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   text-align: center;
   display: flex;
   flex-flow: column nowrap;
@@ -18,6 +19,7 @@ export const StyledMenu = styled.nav`
   align-items: flex-end;
   transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
   transition: transform 0.3s ease-in-out;
+
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100%;

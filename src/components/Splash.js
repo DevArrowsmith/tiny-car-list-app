@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Buzzphrase from './Buzzphrase';
 
 const SplashContainer = styled.div`
+
   height: calc(100vh - 60px - 20px);
   width: 100vw;
   margin: 60px 0 0 0;
@@ -29,7 +30,7 @@ const ImageFrame = styled.div`
   div {
     height: 120px;
     width: 260px;
-    background: url('./images/testcar1.png');
+    background: url('./images/testcar2.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -38,15 +39,15 @@ const ImageFrame = styled.div`
 
 const AnnounceContainer = styled.div`
   position: absolute;
+  z-index: 1;
   height: 140px;
   width: 75%;
-  margin: 350px 0 0 0px;
+  margin: 340px 0 0 0px;
   background: none;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-end;
-  z-index: 11;
 `;
 
 const FontOne = styled.span`

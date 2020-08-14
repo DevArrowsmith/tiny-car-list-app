@@ -11,13 +11,15 @@ const App = () => {
   return (
     <Router>
       <GlobalStyles />
-      <Navbar />
+
       <Switch>
         <Route exact path="/" component={() => <Splash />} />
         <Route exact path="/Listing" component={() => <Listing />} />
         <Route exact path="/AllListings" component={() => <AllListings />} />
         <Route exact path="/NewListing" component={() => <NewListing />} />
+
       </Switch>
+      <Navbar />
     </Router>
   );
 };
