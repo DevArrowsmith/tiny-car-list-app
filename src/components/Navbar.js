@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
 const NavbarContainer = styled.div`
@@ -12,7 +13,7 @@ const NavbarContainer = styled.div`
 	flex-flow: row nowrap;
 	justify-content: space-between;
 	align-items: center;
-
+	   
 	div {
 		height: 100%;
 		margin: 0 15px 0 15px;
@@ -24,11 +25,24 @@ const NavbarContainer = styled.div`
 	}
 `;
 
-const NavHeader = styled.span`
+const NavHeader = styled(Link)`
+text-decoration: none;
 	color: white;
 	font-size: 1.5em;
 	font-weight: bold;
 	font-family: 'Contrail One', cursive;
+
+	&:visited {
+			text-decoration: none;
+		}
+	
+		&:active {
+			text-decoration: none;
+		}
+		
+		&:hover {
+			text-decoration: none;
+		}
 `;
 
 const NavLink = styled.span`
@@ -39,7 +53,7 @@ color: white;
 const Navbar = () => (
   <NavbarContainer>
     <div>
-      <NavHeader>TinyCarList</NavHeader>
+      <NavHeader to="/">TinyCarList</NavHeader>
     </div>
     <div>
       <NavLink>Link 1</NavLink>
