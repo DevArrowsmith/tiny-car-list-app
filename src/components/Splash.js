@@ -39,13 +39,13 @@ const ImageFrame = styled.div`
 const AnnounceContainer = styled.div`
   position: absolute;
   height: 140px;
-  width: calc(100vw - 230px);
-  margin: 350px 0 0 230px;
+  width: 75%;
+  margin: 350px 0 0 0px;
   background: none;
   display: flex;
   flex-flow: column nowrap;
-  align-items: flex-start;
   justify-content: flex-start;
+  align-items: flex-end;
   z-index: 11;
 `;
 
@@ -53,6 +53,7 @@ const FontOne = styled.span`
   font-family: 'Lato';
   font-size: 2.2em;
   color: white;
+  width: calc(100% - 80px);
 `;
 
 const FontTwo = styled.span`
@@ -60,6 +61,7 @@ const FontTwo = styled.span`
   font-family: 'Contrail One';
   font-size: 2.2em;
   color: white;
+  width: calc(100% - 110px);
 `;
 
 const ButtonContainer = styled.div`
