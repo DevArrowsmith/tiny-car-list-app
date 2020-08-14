@@ -29,10 +29,10 @@ const NavSection = styled.div`
 
 const NavHeader = styled(Link)`
   text-decoration: none;
-  color: white;
+  font-family: 'Contrail One', cursive;
   font-size: 1.5em;
   font-weight: bold;
-  font-family: 'Contrail One', cursive;
+  color: white;
 
   &:visited {
     text-decoration: none;
