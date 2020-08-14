@@ -6,7 +6,7 @@ const AllListingsContainer = styled.div`
   width: 100vw;
   margin: 60px 0 0 0;
   padding: 20px 0 0 0;
-  background: blue;
+  background: black;
 `;
 
 const Header = styled.span`
@@ -17,6 +17,7 @@ const Header = styled.span`
   height: 60px;
   width: calc(100vw - 20px);
   background: black;
+  border-bottom: 1px solid #454545;
   font-family: 'Contrail One', cursive;
   font-size: 1.5em;
   font-weight: bold;
