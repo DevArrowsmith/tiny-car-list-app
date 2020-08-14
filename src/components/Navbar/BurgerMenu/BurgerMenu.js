@@ -1,7 +1,9 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import useOnClickOutside from '../../hooks/hooks';
+// eslint-disable-next-line import/no-unresolved
 import Burger from './Burger';
+// eslint-disable-next-line import/no-unresolved
 import Menu from './Menu';
 
 const BurgerMenuContainer = styled.div`

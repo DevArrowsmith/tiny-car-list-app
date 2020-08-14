@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+// eslint-disable-next-line import/no-unresolved
 import BurgerMenu from './BurgerMenu/BurgerMenu';
 
 const NavbarContainer = styled.div`
@@ -18,7 +19,7 @@ const NavbarContainer = styled.div`
 
 const NavSection = styled.div`
   height: 100%;
-  margin: 0 15px 0 15px;
+  margin: 0 10px 0 15px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
