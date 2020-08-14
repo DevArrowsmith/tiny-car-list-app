@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Buzzphrase from './Buzzphrase';
 
 const SplashContainer = styled.div`
-
   height: calc(100vh - 60px - 20px);
   width: 100vw;
   margin: 60px 0 0 0;

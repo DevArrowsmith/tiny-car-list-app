@@ -1,12 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import Card from './Card';
 
 const AllListingsContainer = styled.div`
-  height: calc(100vh - 60px - 20px);
-  width: 100vw;
-  margin: 60px 0 0 0;
-  padding: 20px 0 0 0;
+  height: fit-content;;
+  width:  calc(100vw - 10px);
+  margin: 120px 0 0 0;
+  padding: 5px;
   background: black;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
 `;
 
 const Header = styled.span`
@@ -50,6 +55,8 @@ const AllListings = () => {
     <AllListingsContainer>
       <Header>Listings</Header>
       <FilterMenu>Search ></FilterMenu>
+      <Card />
+      <Card />
     </AllListingsContainer>
   );
 };
