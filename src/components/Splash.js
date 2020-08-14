@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Buzzphrase from './Buzzphrase.js';
+import Buzzphrase from './Buzzphrase';
 
 const SplashContainer = styled.div`
   height: calc(100vh - 60px - 20px);
@@ -18,13 +18,22 @@ const ImageFrame = styled.div`
   height: 340px;
   width: 340px;
   margin: 45px 0 0 0;
-  background: url('./images/frame-1-brush-teal.png');
+  background: url('./images/frame3R.png');
   background-size: contain;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-`;
+
+ div {
+  height:120px;
+  width: 260px;
+  background: url('./images/testcar1.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+ } 
+ `;
 
 const AnnounceContainer = styled.div`
   position: absolute;
@@ -52,7 +61,6 @@ color: white;
 `;
 
 const ButtonContainer = styled.div`
-background: blue;
   height: 40px;
   width: 100vw; 
   margin: 110px 20px 0 20px;
@@ -61,11 +69,14 @@ background: blue;
   justify-content: space-evenly;
 
   span {
-    background: yellow;
-    border-radius: 10px;
   height: 40px;
   width: 40vw;
+  font-size: 1.2em;
   color: black;
+  font-family: 'Contrail One', sans-serif; 
+  font-weight: bold;
+  background: whitesmoke;
+    border-radius: 10px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -73,24 +84,22 @@ background: blue;
   }
 `;
 
-const Splash = () => {
-  return (
-    <SplashContainer>
-      <Buzzphrase />
-      <ImageFrame/>
-      <AnnounceContainer>
-        <FontOne>the</FontOne>
-        <FontTwo>Cinnamaroll</FontTwo>
-        <FontTwo>Matcha</FontTwo>
-      </AnnounceContainer>
-      <ButtonContainer>
-        <span>View listing!</span>
-        <span>All Cars</span>
-      </ButtonContainer>
-    </SplashContainer>
-  );
-};
+const Splash = () => (
+  <SplashContainer>
+    <Buzzphrase />
+    <ImageFrame>
+      <div />
+    </ImageFrame>
+    <AnnounceContainer>
+      <FontOne>the</FontOne>
+      <FontTwo>Cinnamaroll</FontTwo>
+      <FontTwo>Matcha</FontTwo>
+    </AnnounceContainer>
+    <ButtonContainer>
+      <span>View listing!</span>
+      <span>All Cars</span>
+    </ButtonContainer>
+  </SplashContainer>
+);
 
 export default Splash;
-
-

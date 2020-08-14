@@ -15,35 +15,29 @@ const BuzzContainer = styled.div`
 `;
 
 const FontOne = styled.span`
-font-family: 'Lato';
-font-size: 2.2em;
-color: white;
+  font-family: 'Lato';
+  font-size: 2.2em;
+  color: white;
 `;
 
 const FontTwo = styled.span`
-margin: 0 0 0 20px;
-font-family: 'Contrail One';
-font-size: 2.2em;
-color: white;
+  margin: 0 0 0 20px;
+  font-family: 'Contrail One';
+  font-size: 2.2em;
+  color: white;
 `;
 
 const Buzzphrase = () => {
-
-  
-const buzzOne = buzzwords.buzzOne[Math.floor(Math.random() * buzzwords.buzzOne.length)];
-const buzzTwo= buzzwords.buzzTwo[Math.floor(Math.random() * buzzwords.buzzTwo.length)];
-console.log(`${buzzOne} ${buzzTwo}`);
-
+  const buzzOne = buzzwords.buzzOne[Math.floor(Math.random() * buzzwords.buzzOne.length)];
+  const buzzTwo = buzzwords.buzzTwo[Math.floor(Math.random() * buzzwords.buzzTwo.length)];
+  console.log(`${buzzOne} ${buzzTwo}`);
 
   return (
     <BuzzContainer>
-  <FontOne>{buzzOne}</FontOne>
-  <FontTwo>{buzzTwo}</FontTwo>
-  </BuzzContainer>
+      <FontOne>{buzzOne}</FontOne>
+      <FontTwo>{buzzTwo}</FontTwo>
+    </BuzzContainer>
   );
 };
 
-
 export default Buzzphrase;
-
-

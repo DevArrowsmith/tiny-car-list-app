@@ -32,24 +32,22 @@ const NavHeader = styled.span`
 `;
 
 const NavLink = styled.span`
-margin: 0 0 0 20px;	
+margin: 0 0 0 20px;
 color: white;
 `;
 
-const Navbar = () => {
-	return (
-		<NavbarContainer>
-			<div>
-				<NavHeader>TinyCarList</NavHeader>
-			</div>
-			<div>
-				<NavLink>Link 1</NavLink>
-				<NavLink>Link 2</NavLink>
-				<NavLink>Link 3</NavLink>
-			</div>
+const Navbar = () => (
+  <NavbarContainer>
+    <div>
+      <NavHeader>TinyCarList</NavHeader>
+    </div>
+    <div>
+      <NavLink>Link 1</NavLink>
+      <NavLink>Link 2</NavLink>
+      <NavLink>Link 3</NavLink>
+    </div>
 
-		</NavbarContainer>
-	);
-};
+  </NavbarContainer>
+);
 
 export default Navbar;
