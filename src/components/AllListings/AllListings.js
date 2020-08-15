@@ -51,12 +51,12 @@ const FilterMenu = styled.span`
   align-items: center;
 `;
 
-const AllListings = ({ mockListings }) => {
+const AllListings = ({ listings }) => {
   return (
     <AllListingsContainer>
       <Header>Listings</Header>
       <FilterMenu>Search</FilterMenu>
-      <CardGenerator mockListings={mockListings} />
+      <CardGenerator listings={listings} />
     </AllListingsContainer>
   );
 };

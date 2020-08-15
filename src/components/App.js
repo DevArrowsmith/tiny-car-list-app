@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import GlobalStyles from '../styles/GlobalStyles';
 import Navbar from './Navbar/Navbar';
@@ -7,8 +7,24 @@ import Listing from './Listing';
 import AllListings from './AllListings/AllListings';
 import NewListing from './NewListing';
 import mockListings from '../assets/mockListings';
+import getListings from '../controllers/listingsController';
 
 const App = () => {
+
+  const [listingsState, setListingsState] = useState([]);
+
+  const setListings = async () => {
+    const res = await getListings();
+    console.log(res);
+    console.log(res.data);
+    setListingsState(res.data);
+  };
+
+  useEffect(() => {
+    setListings();
+  },[]);
+
+
   return (
     <Router>
       <GlobalStyles />
@@ -19,7 +35,7 @@ const App = () => {
         <Route
           exact
           path="/AllListings"
-          component={() => <AllListings mockListings={mockListings} />}
+          component={() => <AllListings listings={listingsState} />}
         />
         <Route exact path="/NewListing" component={() => <NewListing />} />
       </Switch>

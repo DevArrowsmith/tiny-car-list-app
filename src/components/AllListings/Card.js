@@ -30,12 +30,12 @@ const ImageFrame = styled.div`
 `;
 
 const CarImage = styled.div`
-    height: 220px;
-    width: 220px;
-    background: url(${(props) => props.imgurl});
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+  height: 220px;
+  width: 220px;
+  background: url(${(props) => props.imgurl});
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 const TextFrame = styled.span`
@@ -84,8 +84,6 @@ const Card = ({ listingData }) => {
   const { imgref, make, model, year, price, city, email } = listingData;
 
   const imgurl = `https://res.cloudinary.com/gummicode/image/upload/v1597358536/tinycarlist/${imgref}.png`;
-
-
 
   return (
     <CardContainer>
