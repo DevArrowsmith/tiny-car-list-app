@@ -6,7 +6,7 @@ import Buzzphrase from './Buzzphrase';
 const SplashContainer = styled.div`
   height: calc(100vh - 60px - 20px);
   width: 100vw;
-  margin: 60px 0 0 0;
+  margin: 50px 0 0 0;
   padding: 20px 0 0 0;
   background: black;
   display: flex;
@@ -16,10 +16,10 @@ const SplashContainer = styled.div`
 `;
 
 const ImageFrame = styled.div`
-  height: 340px;
-  width: 340px;
-  margin: 45px 0 0 0;
-  background: url('./images/circleR.png');
+  height: 325px;
+  width: 325px;
+  margin: 50px 0 0 0;
+  background: url('./images/circleR2.png');
   background-size: contain;
   display: flex;
   flex-flow: column nowrap;

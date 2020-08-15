@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Card from './Card';
+import CardGenerator from './CardGenerator';
 
 const AllListingsContainer = styled.div`
-  height: fit-content;;
+  height: fit-content;
   width:  calc(100vw - 10px);
   margin: 120px 0 0 0;
   padding: 5px;
@@ -57,6 +58,7 @@ const AllListings = () => {
       <FilterMenu>Search ></FilterMenu>
       <Card />
       <Card />
+      <CardGenerator />
     </AllListingsContainer>
   );
 };
