@@ -1,11 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Card from './Card';
 import CardGenerator from './CardGenerator';
 
 const AllListingsContainer = styled.div`
   height: fit-content;
-  width:  calc(100vw - 10px);
+  width: calc(100vw - 10px);
   margin: 120px 0 0 0;
   padding: 5px;
   background: black;
@@ -40,7 +40,7 @@ const FilterMenu = styled.span`
   height: calc(60px - 20px);
   width: 100px;
   padding: 10px 10px;
-  background-image: url("./images/FlagBlack.png");
+  background-image: url('./images/FlagBlack.png');
   background-size: 120px;
   font-family: 'Contrail One', cursive;
   font-size: 1.4em;
@@ -59,6 +59,20 @@ const AllListings = ({ listings }) => {
       <CardGenerator listings={listings} />
     </AllListingsContainer>
   );
+};
+
+AllListings.propTypes = {
+  listings: PropTypes.arrayOf(
+    PropTypes.shape({
+      imgref: PropTypes.string.isRequired,
+      make: PropTypes.string.isRequired,
+      model: PropTypes.string.isRequired,
+      year: PropTypes.number.isRequired,
+      price: PropTypes.number.isRequired,
+      city: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
 };
 
 export default AllListings;

@@ -6,7 +6,6 @@ import Splash from './Splash';
 import Listing from './Listing';
 import AllListings from './AllListings/AllListings';
 import NewListing from './NewListing';
-import mockListings from '../assets/mockListings';
 import getListings from '../controllers/listingsController';
 
 const App = () => {

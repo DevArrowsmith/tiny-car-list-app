@@ -124,7 +124,7 @@ const mockListings = [
     price: 10000,
     city: 'Edinburgh',
     email: 'ekeaney@purevolume.com',
-  }
+  },
 ];
 
 export default mockListings;
