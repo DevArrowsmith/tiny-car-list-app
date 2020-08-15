@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Card from './AllListings/Card';
 
 const ListingContainer = styled.div`
   height: calc(100vh - 60px);
@@ -9,8 +10,21 @@ const ListingContainer = styled.div`
   background: red;
 `;
 
-const Listing = () => {
-  return <ListingContainer />;
+const LoadingMessage = styled.h1`
+  font-family: 'Contrail One', cursive;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+`;
+
+const Listing = ({ selectedListing }) => {
+  return selectedListing ? (
+    <ListingContainer>
+      <Card listingData={selectedListing} />
+    </ListingContainer>
+  ) : (
+    <loadingMessage>Loading...</loadingMessage>
+  );
 };
 
 export default Listing;

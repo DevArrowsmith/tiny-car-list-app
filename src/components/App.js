@@ -9,28 +9,52 @@ import NewListing from './NewListing';
 import getListings from '../controllers/listingsController';
 
 const App = () => {
-
   const [listingsState, setListingsState] = useState([]);
+
+  const [selectedState, setSelectedState] = useState(0);
+
+  const setSelected = (data) => {
+    const selectedIndex = Math.floor(Math.random() * data.length);
+    setSelectedState(selectedIndex);
+  };
 
   const setListings = async () => {
     const res = await getListings();
-    console.log(res);
-    console.log(res.data);
-    setListingsState(res.data);
+    await setListingsState(res.data);
+    await setSelected(res.data);
   };
 
   useEffect(() => {
     setListings();
-  },[]);
+  }, []);
 
+  const ConsoleLog = ({ children }) => {
+    console.log(children);
+    return false;
+  };
 
   return (
     <Router>
+      <ConsoleLog>{listingsState}</ConsoleLog>
+      <ConsoleLog>{selectedState}</ConsoleLog>
+      <ConsoleLog>{listingsState[selectedState]}</ConsoleLog>
       <GlobalStyles />
 
       <Switch>
-        <Route exact path="/" component={() => <Splash />} />
-        <Route exact path="/Listing" component={() => <Listing />} />
+        <Route
+          exact
+          path="/"
+          component={() => (
+            <Splash selectedListing={listingsState[selectedState]} />
+          )}
+        />
+        <Route
+          exact
+          path="/Listing"
+          component={() => (
+            <Listing selectedListing={listingsState[selectedState]} />
+          )}
+        />
         <Route
           exact
           path="/AllListings"

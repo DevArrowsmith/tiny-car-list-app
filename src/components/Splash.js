@@ -6,7 +6,7 @@ import Buzzphrase from './Buzzphrase';
 const SplashContainer = styled.div`
   height: calc(100vh - 60px - 20px);
   width: 100vw;
-  margin: 50px 0 0 0;
+  margin: 60px 0 0 0;
   padding: 20px 0 0 0;
   background: black;
   display: flex;
@@ -24,16 +24,16 @@ const ImageFrame = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: center;
+  align-items: center
+`;
 
-  div {
-    height: 120px;
-    width: 260px;
-    background: url('./images/mock-car-images/testcar2.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+const CarImage = styled.div`
+  height: 280px;
+  width: 280px;
+  background: url(${(props) => props.imgurl});
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 const AnnounceContainer = styled.div`
@@ -107,22 +107,27 @@ const NavButton = styled(Link)`
   }
 `;
 
-const Splash = () => (
-  <SplashContainer>
-    <Buzzphrase />
-    <ImageFrame>
-      <div />
-    </ImageFrame>
-    <AnnounceContainer>
-      <FontOne>the</FontOne>
-      <FontTwo>Cinnamaroll</FontTwo>
-      <FontTwo>Matcha</FontTwo>
-    </AnnounceContainer>
-    <ButtonContainer>
-      <NavButton to="/Listing">View listing!</NavButton>
-      <NavButton to="/AllListings">All Cars</NavButton>
-    </ButtonContainer>
-  </SplashContainer>
-);
+const Splash = ({ selectedListing }) => {
+
+  return selectedListing ? (
+    <SplashContainer>
+      <Buzzphrase />
+      <ImageFrame>
+        <CarImage imgurl={`https://res.cloudinary.com/gummicode/image/upload/tinycarlist/${selectedListing.imgref}.png`}/>
+      </ImageFrame>
+      <AnnounceContainer>
+        <FontOne>the</FontOne>
+        <FontTwo>{selectedListing.make}</FontTwo>
+        <FontTwo>{selectedListing.model}</FontTwo>
+      </AnnounceContainer>
+      <ButtonContainer>
+        <NavButton to="/Listing">View listing!</NavButton>
+        <NavButton to="/AllListings">All Cars</NavButton>
+      </ButtonContainer>
+    </SplashContainer>
+  ) : (
+    <loadingMessage>Loading...</loadingMessage>
+  );
+};
 
 export default Splash;
