@@ -46,12 +46,13 @@ const TextFrame = styled.span`
   text-align: center;
 `;
 
-const ContactButton = styled(Link)`
+const ContactButton = styled.a`
   text-decoration: none;
   height: 40px;
-  width: 40vw;
+  width: 140px;
   margin: 20px 0 25px 0;
-  font-size: 1.2em;
+  padding: 0 10px;
+  font-size: 1.5em;
   color: black;
   font-family: 'Contrail One', sans-serif;
   font-weight: bold;
@@ -84,7 +85,7 @@ const ContactButton = styled(Link)`
 const Card = ({ listingData }) => {
   const { imgref, make, model, year, price, city, email } = listingData;
 
-  const imgurl = `https://res.cloudinary.com/gummicode/image/upload/v1597358536/tinycarlist/${imgref}.png`;
+  const imgurl = `https://res.cloudinary.com/gummicode/image/upload/tinycarlist/${imgref}.png`;
 
   return (
     <CardContainer>
@@ -94,7 +95,9 @@ const Card = ({ listingData }) => {
       <TextFrame> {`${make} ${model} ${year}`} </TextFrame>
       <TextFrame> {`£${price}`} </TextFrame>
       <TextFrame> {`${city}, UK`} </TextFrame>
-      <ContactButton>Contact Seller</ContactButton>
+      <ContactButton href={`mailto:${email}`} target="_blank">
+        Contact Seller
+      </ContactButton>
     </CardContainer>
   );
 };

@@ -5,7 +5,6 @@ const getListings = async () => {
     const res = await axios({
       url: `http://tiny-car-list-api.herokuapp.com/listing`,
     });
-    console.log (res);
     return res;
   } catch (error) {
     return error;
