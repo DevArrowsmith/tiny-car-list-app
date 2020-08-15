@@ -5,13 +5,13 @@ import styled from 'styled-components';
 
 const CardContainer = styled.div`
   width: 260px;
-  height: 460px;
+  height: fit-content;
   margin: 10px;
   background: black;
   border: 1px solid #212121;
   border-radius: 20px;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
   justify-content: start;
   align-items: center;
 `;
@@ -43,13 +43,14 @@ const TextFrame = styled.span`
   font-size: 1.5em;
   font-weight: bold;
   color: white;
+  text-align: center;
 `;
 
 const ContactButton = styled(Link)`
   text-decoration: none;
   height: 40px;
   width: 40vw;
-  margin: 20px 0 0 0;
+  margin: 20px 0 25px 0;
   font-size: 1.2em;
   color: black;
   font-family: 'Contrail One', sans-serif;
