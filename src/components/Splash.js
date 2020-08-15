@@ -19,7 +19,7 @@ const ImageFrame = styled.div`
   height: 325px;
   width: 325px;
   margin: 50px 0 0 0;
-  background: url('./images/circleR2.png');
+  background: url('./images/FrameRed.png');
   background-size: contain;
   display: flex;
   flex-flow: column nowrap;
@@ -29,7 +29,7 @@ const ImageFrame = styled.div`
   div {
     height: 120px;
     width: 260px;
-    background: url('./images/testcar2.png');
+    background: url('./images/mock-car-images/testcar2.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

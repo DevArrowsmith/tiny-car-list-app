@@ -1,8 +1,7 @@
 import React from 'react';
 import Card from './Card';
-import mockListings from '../../assets/mockListings';
 
-const CardGenerator = () => {
+const CardGenerator = ({ mockListings }) => {
   return mockListings.map((listing) => {
     return <Card listingData={listing} />;
   });

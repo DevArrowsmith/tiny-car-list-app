@@ -40,7 +40,7 @@ const FilterMenu = styled.span`
   height: calc(60px - 20px);
   width: 100px;
   padding: 10px 10px;
-  background-image: url("./images/FlagBla.png");
+  background-image: url("./images/FlagBlack.png");
   background-size: 120px;
   font-family: 'Contrail One', cursive;
   font-size: 1.4em;
@@ -51,14 +51,12 @@ const FilterMenu = styled.span`
   align-items: center;
 `;
 
-const AllListings = () => {
+const AllListings = ({ mockListings }) => {
   return (
     <AllListingsContainer>
       <Header>Listings</Header>
-      <FilterMenu>Search ></FilterMenu>
-      <Card />
-      <Card />
-      <CardGenerator />
+      <FilterMenu>Search</FilterMenu>
+      <CardGenerator mockListings={mockListings} />
     </AllListingsContainer>
   );
 };
