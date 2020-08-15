@@ -7,11 +7,19 @@ import Listing from './Listing';
 import AllListings from './AllListings/AllListings';
 import NewListing from './NewListing';
 import getListings from '../controllers/listingsController';
+import buzzwords from '../assets/buzzwords';
 
 const App = () => {
   const [listingsState, setListingsState] = useState([]);
-
   const [selectedState, setSelectedState] = useState(0);
+  const [buzzState, setBuzzState] = useState(['fabulous', 'auto']);
+
+  const setBuzz = () => {
+    setBuzzState([
+      buzzwords.buzzOne[Math.floor(Math.random() * buzzwords.buzzOne.length)],
+      buzzwords.buzzTwo[Math.floor(Math.random() * buzzwords.buzzTwo.length)],
+    ]);
+  };
 
   const setSelected = (data) => {
     const selectedIndex = Math.floor(Math.random() * data.length);
@@ -19,6 +27,7 @@ const App = () => {
   };
 
   const setListings = async () => {
+    setBuzz();
     const res = await getListings();
     await setListingsState(res.data);
     await setSelected(res.data);
@@ -45,7 +54,10 @@ const App = () => {
           exact
           path="/"
           component={() => (
-            <Splash selectedListing={listingsState[selectedState]} />
+            <Splash
+              selectedListing={listingsState[selectedState]}
+              buzzState={buzzState}
+            />
           )}
         />
         <Route

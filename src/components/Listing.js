@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Card from './AllListings/Card';
 
@@ -23,8 +24,20 @@ const Listing = ({ selectedListing }) => {
       <Card listingData={selectedListing} />
     </ListingContainer>
   ) : (
-    <loadingMessage>Loading...</loadingMessage>
+    <LoadingMessage>Loading...</LoadingMessage>
   );
+};
+
+Listing.propTypes = {
+  selectedListing: PropTypes.shape({
+    imgref: PropTypes.string.isRequired,
+    make: PropTypes.string.isRequired,
+    model: PropTypes.string.isRequired,
+    year: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
+    city: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Listing;

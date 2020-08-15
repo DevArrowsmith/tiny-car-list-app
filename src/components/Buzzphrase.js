@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import buzzwords from '../assets/buzzwords';
 
 const BuzzContainer = styled.div`
   position: absolute;
@@ -27,17 +27,17 @@ const FontTwo = styled.span`
   color: white;
 `;
 
-const Buzzphrase = () => {
-  const buzzOne =
-    buzzwords.buzzOne[Math.floor(Math.random() * buzzwords.buzzOne.length)];
-  const buzzTwo =
-    buzzwords.buzzTwo[Math.floor(Math.random() * buzzwords.buzzTwo.length)];
+const Buzzphrase = ({ buzzState }) => {
   return (
     <BuzzContainer>
-      <FontOne>{buzzOne}</FontOne>
-      <FontTwo>{buzzTwo}</FontTwo>
+      <FontOne>{buzzState[0]}</FontOne>
+      <FontTwo>{buzzState[1]}</FontTwo>
     </BuzzContainer>
   );
+};
+
+Buzzphrase.propTypes = {
+  buzzState: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 };
 
 export default Buzzphrase;

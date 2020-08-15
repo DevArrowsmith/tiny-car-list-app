@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Buzzphrase from './Buzzphrase';
@@ -24,7 +25,7 @@ const ImageFrame = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: center
+  align-items: center;
 `;
 
 const CarImage = styled.div`
@@ -107,13 +108,14 @@ const NavButton = styled(Link)`
   }
 `;
 
-const Splash = ({ selectedListing }) => {
-
+const Splash = ({ selectedListing, buzzState }) => {
   return selectedListing ? (
     <SplashContainer>
-      <Buzzphrase />
+      <Buzzphrase buzzState={buzzState} />
       <ImageFrame>
-        <CarImage imgurl={`https://res.cloudinary.com/gummicode/image/upload/tinycarlist/${selectedListing.imgref}.png`}/>
+        <CarImage
+          imgurl={`https://res.cloudinary.com/gummicode/image/upload/tinycarlist/${selectedListing.imgref}.png`}
+        />
       </ImageFrame>
       <AnnounceContainer>
         <FontOne>the</FontOne>
@@ -128,6 +130,19 @@ const Splash = ({ selectedListing }) => {
   ) : (
     <loadingMessage>Loading...</loadingMessage>
   );
+};
+
+Splash.propTypes = {
+  selectedListing: PropTypes.shape({
+    imgref: PropTypes.string.isRequired,
+    make: PropTypes.string.isRequired,
+    model: PropTypes.string.isRequired,
+    year: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
+    city: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+  }).isRequired,
+  buzzState: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 };
 
 export default Splash;
