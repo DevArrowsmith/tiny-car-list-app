@@ -53,6 +53,11 @@ const AllListings = ({ listings }) => {
     },
   };
 
+  const priceSort = {
+    ascending: (a, b) => a.price - b.price,
+    descending: (a, b) => b.price - a.price,
+  };
+
   const [filterState, setFilterState] = useState(initialState.filters);
   const [filteredListings, setFilteredListings] = useState(listings);
 
@@ -67,7 +72,7 @@ const AllListings = ({ listings }) => {
 
     const sortPrice = !filterState.price
       ? locationFilter
-      : locationFilter.sort((a, b) => a.price - b.price);
+      : locationFilter.sort(priceSort[filterState.price]);
 
     setFilteredListings(sortPrice);
   };
