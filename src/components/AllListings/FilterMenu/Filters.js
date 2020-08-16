@@ -51,15 +51,16 @@ const FilterSection = styled.div`
   width: 200px;
   padding: 0;
   margin: 0 30px 10px 0;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #212121;
   border-radius: 10px;
 `;
 
 const FilterSectionHead = styled.div`
   height: fit-content;
   width: calc(100% - 15px);
-  padding: 0 0 5px 15px;
-  background: rgba(33, 33, 33, 0.8);
+  padding: 0 0 5px 15px; 
+  background: #212121;
   border-radius: 10px 10px 0 0;
   display: flex;
   flex-flow: row nowrap;
@@ -71,7 +72,7 @@ const FilterSectionBody = styled.div`
   height: fit-content;
   width: calc(100% - 15px);
   padding: 0 0 5px 15px;
-  background: rgba(190, 190, 190, 0.8);
+
   border-radius: 0 0 10px 10px;
   display: flex;
   flex-flow: column nowrap;
