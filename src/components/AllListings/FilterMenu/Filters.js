@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { bool } from 'prop-types';
 
@@ -61,33 +60,6 @@ const FilterSectionBody = styled.select`
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
-`;
-
-const MultiInsert = styled.div`
-  height: fit-content;
-  width: 100%;
-  background: none;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-`;
-
-const FilterColumn = styled.div`
-  height: fit-content;
-  width: 50%;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-`;
-
-const SectionText = styled.span`
-  height: fit-content;
-  padding: 8px 0 0 0;
-  font-family: 'Contrail One', Helvetica, sans-serif;
-  font-size: 1.1em;
-  color: white;
 `;
 
 const Filters = ({ open }) => {
@@ -171,12 +143,6 @@ const Filters = ({ open }) => {
         </select>
       </FilterSection>
 
-      <FilterSection>
-        <FilterSectionHead>
-          <SectionText>Price</SectionText>
-        </FilterSectionHead>
-        <FilterSectionBody />
-      </FilterSection>
     </StyledMenu>
   );
 };
