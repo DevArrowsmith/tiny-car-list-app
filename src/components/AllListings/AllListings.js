@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import CardGenerator from './CardGenerator';
@@ -47,24 +47,49 @@ const HeaderText = styled.span`
 const AllListings = ({ listings }) => {
   const initialState = {
     filters: {
-      price: 'none',
-      make: 'all',
-      location: 'all',
+      make: '',
+      location: '',
+      price: '',
     },
   };
 
   const [filterState, setFilterState] = useState(initialState.filters);
+  const [filteredListings, setFilteredListings] = useState(listings);
 
-  const FilterListings = () => {};
+  const filterListings = () => {
+    const makeFilter = !filterState.make
+      ? listings
+      : listings.filter((listing) => listing.make === filterState.make);
+
+    const locationFilter = !filterState.location
+      ? makeFilter
+      : makeFilter.filter((listing) => listing.city === filterState.location);
+
+    const sortPrice = !filterState.price
+      ? locationFilter
+      : locationFilter.sort((a, b) => a.price - b.price);
+
+    setFilteredListings(sortPrice);
+  };
+
+  useEffect(() => {
+    filterListings();
+  }, [filterState]);
 
   return (
     <AllListingsContainer>
       <Header>
         <HeaderText>Listings</HeaderText>
-        <FilterMenu filterState={filterState} setFilterState={setFilterState}>Search</FilterMenu>
+        <FilterMenu
+          filterState={filterState}
+          setFilterState={setFilterState}
+          filterListings={filterListings}
+        >
+          Search
+        </FilterMenu>
       </Header>
 
-      <CardGenerator listings={listings} />
+      <CardGenerator listings={filteredListings} />
     </AllListingsContainer>
   );
 };

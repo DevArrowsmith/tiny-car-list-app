@@ -64,7 +64,7 @@ const FilterSectionBody = styled.select`
   align-items: flex-start;
 `;
 
-const Filters = ({ open, filterState, setFilterState }) => {
+const Filters = ({ open, filterState, setFilterState, filterListings }) => {
 
   const handleFilterChange = (event) => {
     setFilterState({
@@ -72,6 +72,8 @@ const Filters = ({ open, filterState, setFilterState }) => {
       [event.target.name]: event.target.value,
     });
   };
+
+  console.log(filterState);
 
   return (
     <StyledMenu open={open}>
@@ -86,7 +88,7 @@ const Filters = ({ open, filterState, setFilterState }) => {
         >
           <option value="ascending">Sort Ascending</option>
           <option value="descending">Sort Descending</option>
-          <option value="none">Don&apos;t Sort</option>
+          <option value="">Don&apos;t Sort</option>
         </FilterSectionBody>
       </FilterSection>
 
@@ -99,13 +101,13 @@ const Filters = ({ open, filterState, setFilterState }) => {
           onChange={handleFilterChange}
           required
         >
-          <option value="all">All Makes</option>
-          <option value="chroma">Chroma</option>
-          <option value="coffeeshop">Coffeeshop</option>
-          <option value="kawaii">Kawaii</option>
-          <option value="rockstone">Rockstone</option>
-          <option value="stansa">Stansa</option>
-          <option value="vista">Vista</option>
+          <option value="">All Makes</option>
+          <option value="Chroma">Chroma</option>
+          <option value="Coffeeshop">Coffeeshop</option>
+          <option value="Kawaii">Kawaii</option>
+          <option value="Rockstone">Rockstone</option>
+          <option value="Stansa">Stansa</option>
+          <option value="Vista">Vista</option>
         </FilterSectionBody>
       </FilterSection>
 
@@ -118,20 +120,20 @@ const Filters = ({ open, filterState, setFilterState }) => {
           onChange={handleFilterChange}
           required
         >
-          <option value="all">All Locations</option>
-          <option value="belfast">Belfast</option>
-          <option value="birmingham">Birmingham</option>
-          <option value="bristol">Bristol</option>
-          <option value="edinburgh">Edinburgh</option>
-          <option value="glasgow">Glasgow</option>
-          <option value="leeds">Leeds</option>
-          <option value="lecister">Lecister</option>
-          <option value="liverpool">Liverpool</option>
-          <option value="london">London</option>
-          <option value="manchester">Manchester</option>
-          <option value="newcastle">Newcastle</option>
-          <option value="sheffield">Sheffield</option>
-          <option value="york">York</option>
+          <option value="">All Locations</option>
+          <option value="Belfast">Belfast</option>
+          <option value="Birmingham">Birmingham</option>
+          <option value="Bristol">Bristol</option>
+          <option value="Edinburgh">Edinburgh</option>
+          <option value="Glasgow">Glasgow</option>
+          <option value="Leeds">Leeds</option>
+          <option value="Lecister">Lecister</option>
+          <option value="Liverpool">Liverpool</option>
+          <option value="London">London</option>
+          <option value="Manchester">Manchester</option>
+          <option value="Newcastle">Newcastle</option>
+          <option value="Sheffield">Sheffield</option>
+          <option value="York">York</option>
         </FilterSectionBody>
       </FilterSection>
     </StyledMenu>
