@@ -8,9 +8,9 @@ export const StyledMenu = styled.nav`
   z-index: 3;
   top: 60px;
   right: 0;
-  height: calc(100vh - 120px - 40px);
+  height: calc(100vh - 120px - 10px);
   width: 260px;
-  padding: 10px 0;
+  padding: 0 0 10px 0;
   background: rgba(0, 0, 0, 0.9);
   text-align: center;
   display: flex;
@@ -50,7 +50,7 @@ const FilterSection = styled.div`
   height: fit-content;
   width: 200px;
   padding: 0;
-  margin: 0 30px 0 0;
+  margin: 0 30px 10px 0;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
 `;
@@ -58,21 +58,13 @@ const FilterSection = styled.div`
 const FilterSectionHead = styled.div`
   height: fit-content;
   width: calc(100% - 15px);
-  padding: 0 0 0 15px;
+  padding: 0 0 5px 15px;
   background: rgba(33, 33, 33, 0.8);
   border-radius: 10px 10px 0 0;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-
-  span {
-    height: fit-content;
-    padding: 5px 0;
-    font-family: 'Contrail One', Helvetica, sans-serif;
-    font-size: 1.3;
-    color: white;
-  }
 `;
 
 const FilterSectionBody = styled.div`
@@ -85,50 +77,94 @@ const FilterSectionBody = styled.div`
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
+`;
 
-  span {
-    height: fit-content;
-    padding: 5px 0 0 0;
-    font-family: 'Contrail One', Helvetica, sans-serif;
-    font-size: 1.3;
-    color: white;
-  }
+const MultiInsert = styled.div`
+  height: fit-content;
+  width: 100%;
+  background: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+`;
+
+const FilterColumn = styled.div`
+  height: fit-content;
+  width: 50%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+`;
+
+const SectionText = styled.span`
+  height: fit-content;
+  padding: 8px 0 0 0;
+  font-family: 'Contrail One', Helvetica, sans-serif;
+  font-size: 1.1em;
+  color: white;
 `;
 
 const Filters = ({ open }) => {
   return (
     <StyledMenu open={open}>
-
       <FilterSection>
         <FilterSectionHead>
-          <span>Price</span>
+          <SectionText>Price</SectionText>
         </FilterSectionHead>
         <FilterSectionBody>
-          <span>Sort Ascending</span>
-          <span>Sort Descending</span>
+          <SectionText>Sort Ascending</SectionText>
+          <SectionText>Sort Descending</SectionText>
         </FilterSectionBody>
       </FilterSection>
 
       <FilterSection>
         <FilterSectionHead>
-          <span>Make</span>
+          <SectionText>Make</SectionText>
         </FilterSectionHead>
         <FilterSectionBody>
-          <span>Sort Ascending</span>
-          <span>Sort Descending</span>
+          <MultiInsert>
+            <FilterColumn>
+              <SectionText>Chroma</SectionText>
+              <SectionText>Coffeeshop</SectionText>
+              <SectionText>Kawaii</SectionText>
+            </FilterColumn>
+            <FilterColumn>
+              <SectionText>Rockstone</SectionText>
+              <SectionText>Stansa</SectionText>
+              <SectionText>Vista</SectionText>
+            </FilterColumn>
+          </MultiInsert>
         </FilterSectionBody>
       </FilterSection>
 
       <FilterSection>
         <FilterSectionHead>
-          <span>Location</span>
+          <SectionText>Location</SectionText>
         </FilterSectionHead>
         <FilterSectionBody>
-          <span>Sort Ascending</span>
-          <span>Sort Descending</span>
+          <MultiInsert>
+            <FilterColumn>
+              <SectionText>Belfast</SectionText>
+              <SectionText>Birmingham</SectionText>
+              <SectionText>Bristol</SectionText>
+              <SectionText>Edinburgh</SectionText>
+              <SectionText>Glasgow</SectionText>
+              <SectionText>Leeds</SectionText>
+              <SectionText>Lecister</SectionText>
+            </FilterColumn>
+            <FilterColumn>
+              <SectionText>Liverpool</SectionText>
+              <SectionText>London</SectionText>
+              <SectionText>Manchester</SectionText>
+              <SectionText>Newcastle</SectionText>
+              <SectionText>Sheffield</SectionText>
+              <SectionText>York</SectionText>
+            </FilterColumn>
+          </MultiInsert>
         </FilterSectionBody>
       </FilterSection>
-
 
       <Navlink to="/">Test</Navlink>
     </StyledMenu>
