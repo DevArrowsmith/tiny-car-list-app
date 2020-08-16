@@ -3,16 +3,16 @@ import { bool, func } from 'prop-types';
 import styled from 'styled-components';
 
 const StyledBurger = styled.button`
-  display: flex;
-  flex-flow: column;
-  justify-content: space-evenly;
-  align-items: center;
+  padding: 0;
   width: 55px;
   height: 50px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
 
   &:focus {
     outline: none;

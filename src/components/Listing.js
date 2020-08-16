@@ -8,7 +8,10 @@ const ListingContainer = styled.div`
   width: 100vw;
   margin: 60px 0 0 0;
   padding: 0;
-  background: red;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 `;
 
 const LoadingMessage = styled.h1`

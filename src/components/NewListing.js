@@ -6,11 +6,33 @@ const NewListingContainer = styled.div`
   width: 100vw;
   margin: 60px 0 0 0;
   padding: 20px 0 0 0;
-  background: green;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+`;
+
+const SoonFrame = styled.div`
+  height: 325px;
+  width: 325px;
+  margin: 50px 0 0 0;
+  font-family: 'Contrail One';
+  font-size: 2.2em;
+  color: black;
+  background: url('./images/FrameGreen.png');
+  background-size: contain;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 `;
 
 const NewListing = () => {
-  return <NewListingContainer />;
+  return (
+    <NewListingContainer>
+      <SoonFrame> Coming Soon! </SoonFrame>
+    </NewListingContainer>
+  );
 };
 
 export default NewListing;

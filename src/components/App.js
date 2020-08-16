@@ -27,7 +27,6 @@ const App = () => {
   };
 
   const setListings = async () => {
-    setBuzz();
     const res = await getListings();
     await setListingsState(res.data);
     await setSelected(res.data);
@@ -35,6 +34,7 @@ const App = () => {
 
   useEffect(() => {
     setListings();
+    setBuzz();
   }, []);
 
   const ConsoleLog = ({ children }) => {
