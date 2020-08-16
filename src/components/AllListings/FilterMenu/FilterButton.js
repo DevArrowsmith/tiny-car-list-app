@@ -3,9 +3,6 @@ import { bool, func } from 'prop-types';
 import styled from 'styled-components';
 
 const StyledFilterButton = styled.button`
-  /* position: fixed;
-  top: 60px;
-  right: 0px; */
   height: 60px;
   width: 100px;
   padding: 0 20px 0 20px;
@@ -19,7 +16,7 @@ const StyledFilterButton = styled.button`
   color: white;
   border: none;
   cursor: pointer;
-  
+
   &:focus {
     outline: none;
   }
@@ -28,7 +25,6 @@ const StyledFilterButton = styled.button`
 const FilterButton = ({ filterOpen, setFilterOpen }) => {
   return (
     <StyledFilterButton
-    class="fbt"
       open={filterOpen}
       onClick={() => setFilterOpen(!filterOpen)}
     >
@@ -37,4 +33,8 @@ const FilterButton = ({ filterOpen, setFilterOpen }) => {
   );
 };
 
+FilterButton.propTypes = {
+  filterOpen: bool.isRequired,
+  setFilterOpen: func.isRequired,
+};
 export default FilterButton;

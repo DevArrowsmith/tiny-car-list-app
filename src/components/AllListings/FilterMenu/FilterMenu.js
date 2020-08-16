@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
-import useOnClickOutside from '../../hooks/hooks';
+import useOnClickOutside from '../../../hooks/hooks';
 import FilterButton from './FilterButton';
 import Filters from './Filters';
 

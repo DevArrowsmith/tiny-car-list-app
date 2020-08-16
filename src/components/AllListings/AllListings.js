@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import CardGenerator from './CardGenerator';
-import FilterMenu from './FilterMenu';
+import FilterMenu from './FilterMenu/FilterMenu';
 
 const AllListingsContainer = styled.div`
   height: fit-content;
@@ -43,27 +43,6 @@ const HeaderText = styled.span`
   justify-content: center;
   align-items: center;
 `;
-
-
-
-// FilterMenu will be a menu that loads from the left of the screen.
-// const FilterMenu = styled.span`
-//   position: fixed;
-//   top: 60px;
-//   right: 0px;
-//   height: calc(60px - 20px);
-//   width: 100px;
-//   padding: 10px 10px;
-//   background-image: url('./images/FlagBlack.png');
-//   background-size: 120px;
-//   font-family: 'Contrail One', cursive;
-//   font-size: 1.4em;
-//   font-weight: bold;
-//   color: white;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// `;
 
 const AllListings = ({ listings }) => {
   return (
