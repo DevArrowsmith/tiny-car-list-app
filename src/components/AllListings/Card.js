@@ -39,7 +39,7 @@ const CarImage = styled.div`
 `;
 
 const TextFrame = styled.span`
-  font-family: 'Contrail One', cursive;
+  font-family: 'Contrail One', Helvetica, sans-serif;
   font-size: 1.5em;
   font-weight: bold;
   color: white;
@@ -54,7 +54,7 @@ const ContactButton = styled.a`
   padding: 0 10px;
   font-size: 1.5em;
   color: black;
-  font-family: 'Contrail One', sans-serif;
+  font-family: 'Contrail One', Helvetica, sans-serif;
   font-weight: bold;
   background: whitesmoke;
   border-radius: 10px;

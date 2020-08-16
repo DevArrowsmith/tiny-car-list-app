@@ -51,7 +51,7 @@ const AnnounceContainer = styled.div`
 `;
 
 const FontOne = styled.span`
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
   font-size: 2.2em;
   color: white;
   width: calc(100% - 80px);
@@ -59,7 +59,7 @@ const FontOne = styled.span`
 
 const FontTwo = styled.span`
   margin: 0 0 0 20px;
-  font-family: 'Contrail One';
+  font-family: 'Contrail One', Helvetica, sans-serif;
   font-size: 2.2em;
   color: white;
   width: calc(100% - 110px);
@@ -80,7 +80,7 @@ const NavButton = styled(Link)`
   width: 40vw;
   font-size: 1.2em;
   color: black;
-  font-family: 'Contrail One', sans-serif;
+  font-family: 'Contrail One', Helvetica, sans-serif;
   font-weight: bold;
   background: whitesmoke;
   border-radius: 10px;

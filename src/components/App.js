@@ -37,16 +37,8 @@ const App = () => {
     setBuzz();
   }, []);
 
-  const ConsoleLog = ({ children }) => {
-    console.log(children);
-    return false;
-  };
-
   return (
     <Router>
-      <ConsoleLog>{listingsState}</ConsoleLog>
-      <ConsoleLog>{selectedState}</ConsoleLog>
-      <ConsoleLog>{listingsState[selectedState]}</ConsoleLog>
       <GlobalStyles />
 
       <Switch>

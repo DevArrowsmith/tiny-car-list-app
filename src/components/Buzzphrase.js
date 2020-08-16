@@ -22,7 +22,7 @@ const FontOne = styled.span`
 
 const FontTwo = styled.span`
   margin: 0 0 0 20px;
-  font-family: 'Contrail One';
+  font-family: 'Contrail One', Helvetica, sans-serif;
   font-size: 2.2em;
   color: white;
 `;

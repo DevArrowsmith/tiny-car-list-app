@@ -34,7 +34,7 @@ const HeaderText = styled.span`
   height: 60px;
   margin: 0 0 0 20px;
   border-bottom: 1px solid #454545;
-  font-family: 'Contrail One', cursive;
+  font-family: 'Contrail One', Helvetica, sans-serif;
   font-size: 1.5em;
   font-weight: bold;
   color: white;

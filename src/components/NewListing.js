@@ -16,7 +16,7 @@ const SoonFrame = styled.div`
   height: 325px;
   width: 325px;
   margin: 50px 0 0 0;
-  font-family: 'Contrail One';
+  font-family: 'Contrail One', Helvetica, sans-serif;
   font-size: 2.2em;
   color: black;
   background: url('./images/FrameGreen.png');

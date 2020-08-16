@@ -29,7 +29,7 @@ const NavSection = styled.div`
 
 const NavHeader = styled(Link)`
   text-decoration: none;
-  font-family: 'Contrail One', cursive;
+  font-family: 'Contrail One', Helvetica, sans-serif;
   font-size: 1.5em;
   font-weight: bold;
   color: white;

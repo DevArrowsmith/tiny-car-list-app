@@ -29,7 +29,7 @@ const Navlink = styled(Link)`
   width: calc(100% - 40px);
   height: 75px;
   padding: 0 40px 0 0;
-  font-family: 'Contrail One';
+  font-family: 'Contrail One', Helvetica, sans-serif;
   font-size: 1.8em;
   color: white;
   text-decoration: none;

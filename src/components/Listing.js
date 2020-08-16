@@ -15,7 +15,7 @@ const ListingContainer = styled.div`
 `;
 
 const LoadingMessage = styled.h1`
-  font-family: 'Contrail One', cursive;
+  font-family: 'Contrail One', Helvetica, sans-serif;
   font-size: 1.4em;
   font-weight: bold;
   color: white;
