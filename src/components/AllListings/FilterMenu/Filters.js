@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { bool } from 'prop-types';
 
-export const StyledMenu = styled.nav`
+export const StyledMenu = styled.form`
   position: absolute;
   z-index: 3;
   top: 60px;
@@ -19,31 +19,6 @@ export const StyledMenu = styled.nav`
   align-items: flex-end;
   transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
   transition: transform 0.3s ease-in-out;
-
-  @media (max-width: ${({ theme }) => theme.mobile}) {
-    width: 100%;
-  }
-`;
-
-const Navlink = styled(Link)`
-  width: calc(100% - 40px);
-  height: 75px;
-  padding: 0 40px 0 0;
-  font-family: 'Contrail One', Helvetica, sans-serif;
-  text-decoration: none;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
-  align-items: center;
-
-  @media (max-width: ${({ theme }) => theme.mobile}) {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  &:hover {
-    color: ${({ theme }) => theme.primaryHover};
-  }
 `;
 
 const FilterSection = styled.div`
@@ -56,10 +31,13 @@ const FilterSection = styled.div`
   border-radius: 10px;
 `;
 
-const FilterSectionHead = styled.div`
+const FilterSectionHead = styled.label`
   height: fit-content;
   width: calc(100% - 15px);
-  padding: 0 0 5px 15px; 
+  padding: 8px 0 5px 15px;
+  font-family: 'Contrail One', Helvetica, sans-serif;
+  font-size: 1.1em;
+  color: white;
   background: #212121;
   border-radius: 10px 10px 0 0;
   display: flex;
@@ -68,11 +46,16 @@ const FilterSectionHead = styled.div`
   align-items: center;
 `;
 
-const FilterSectionBody = styled.div`
+const FilterSectionBody = styled.select`
   height: fit-content;
-  width: calc(100% - 15px);
-  padding: 0 0 5px 15px;
-
+  width: 100%;
+  padding: 5px 0 5px 15px;
+  margin: 0;
+  font-family: 'Contrail One', Helvetica, sans-serif;
+  font-size: 1.1em;
+  color: white;
+  background: black;
+  border: 1px solid #212121;
   border-radius: 0 0 10px 10px;
   display: flex;
   flex-flow: column nowrap;
@@ -108,66 +91,92 @@ const SectionText = styled.span`
 `;
 
 const Filters = ({ open }) => {
+  const initialState = {
+    filters: {
+      price: '',
+      make: 'all',
+      location: 'all',
+    },
+  };
+
+  const [filterState, setFilterState] = useState(initialState.filters);
+
+  const handleFilterChange = (event) => {
+    setFilterState({
+      ...filterState,
+      [event.target.name]: event.target.value,
+    });
+    console.log(filterState);
+  };
+
   return (
     <StyledMenu open={open}>
+      <FilterSection>
+        <FilterSectionHead htmlFor="price">Price</FilterSectionHead>
+        <FilterSectionBody
+          id="price"
+          name="price"
+          value={filterState.price}
+          onChange={handleFilterChange}
+          required
+        >
+          <option value="ascending">Sort Ascending</option>
+          <option value="descending">Sort Descending</option>
+          <option value="none">Don&apos;t Sort</option>
+        </FilterSectionBody>
+      </FilterSection>
+
+      <FilterSection>
+        <FilterSectionHead htmlFor="make">Make</FilterSectionHead>
+        <select
+          id="make"
+          name="make"
+          value={filterState.make}
+          onChange={handleFilterChange}
+          required
+        >
+          <option value="all">All Makes</option>
+          <option value="chroma">Chroma</option>
+          <option value="coffeeshop">Coffeeshop</option>
+          <option value="kawaii">Kawaii</option>
+          <option value="rockstone">Rockstone</option>
+          <option value="stansa">Stansa</option>
+          <option value="vista">Vista</option>
+        </select>
+      </FilterSection>
+
+      <FilterSection>
+        <FilterSectionHead htmlFor="location">Location</FilterSectionHead>
+        <select
+          id="location"
+          name="location"
+          value={filterState.location}
+          onChange={handleFilterChange}
+          required
+        >
+          <option value="all">All Locations</option>
+          <option value="belfast">Belfast</option>
+          <option value="birmingham">Birmingham</option>
+          <option value="bristol">Bristol</option>
+          <option value="edinburgh">Edinburgh</option>
+          <option value="glasgow">Glasgow</option>
+          <option value="leeds">Leeds</option>
+          <option value="lecister">Lecister</option>
+          <option value="liverpool">Liverpool</option>
+          <option value="london">London</option>
+          <option value="manchester">Manchester</option>
+          <option value="newcastle">Newcastle</option>
+          <option value="sheffield">Sheffield</option>
+          <option value="york">York</option>
+        </select>
+      </FilterSection>
+
       <FilterSection>
         <FilterSectionHead>
           <SectionText>Price</SectionText>
         </FilterSectionHead>
-        <FilterSectionBody>
-          <SectionText>Sort Ascending</SectionText>
-          <SectionText>Sort Descending</SectionText>
-        </FilterSectionBody>
+        <FilterSectionBody />
       </FilterSection>
-
-      <FilterSection>
-        <FilterSectionHead>
-          <SectionText>Make</SectionText>
-        </FilterSectionHead>
-        <FilterSectionBody>
-          <MultiInsert>
-            <FilterColumn>
-              <SectionText>Chroma</SectionText>
-              <SectionText>Coffeeshop</SectionText>
-              <SectionText>Kawaii</SectionText>
-            </FilterColumn>
-            <FilterColumn>
-              <SectionText>Rockstone</SectionText>
-              <SectionText>Stansa</SectionText>
-              <SectionText>Vista</SectionText>
-            </FilterColumn>
-          </MultiInsert>
-        </FilterSectionBody>
-      </FilterSection>
-
-      <FilterSection>
-        <FilterSectionHead>
-          <SectionText>Location</SectionText>
-        </FilterSectionHead>
-        <FilterSectionBody>
-          <MultiInsert>
-            <FilterColumn>
-              <SectionText>Belfast</SectionText>
-              <SectionText>Birmingham</SectionText>
-              <SectionText>Bristol</SectionText>
-              <SectionText>Edinburgh</SectionText>
-              <SectionText>Glasgow</SectionText>
-              <SectionText>Leeds</SectionText>
-              <SectionText>Lecister</SectionText>
-            </FilterColumn>
-            <FilterColumn>
-              <SectionText>Liverpool</SectionText>
-              <SectionText>London</SectionText>
-              <SectionText>Manchester</SectionText>
-              <SectionText>Newcastle</SectionText>
-              <SectionText>Sheffield</SectionText>
-              <SectionText>York</SectionText>
-            </FilterColumn>
-          </MultiInsert>
-        </FilterSectionBody>
-      </FilterSection>
-
-      <Navlink to="/">Test</Navlink>
     </StyledMenu>
   );
 };
