@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import CardGenerator from './CardGenerator';
@@ -45,11 +45,23 @@ const HeaderText = styled.span`
 `;
 
 const AllListings = ({ listings }) => {
+  const initialState = {
+    filters: {
+      price: 'none',
+      make: 'all',
+      location: 'all',
+    },
+  };
+
+  const [filterState, setFilterState] = useState(initialState.filters);
+
+  const FilterListings = () => {};
+
   return (
     <AllListingsContainer>
       <Header>
         <HeaderText>Listings</HeaderText>
-        <FilterMenu>Search</FilterMenu>
+        <FilterMenu filterState={filterState} setFilterState={setFilterState}>Search</FilterMenu>
       </Header>
 
       <CardGenerator listings={listings} />

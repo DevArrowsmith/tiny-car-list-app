@@ -47,6 +47,8 @@ const FilterSectionHead = styled.label`
 
 const FilterSectionBody = styled.select`
   height: fit-content;
+  max-height: 200px;
+  overflow: scroll;
   width: 100%;
   padding: 5px 0 5px 15px;
   margin: 0;
@@ -62,23 +64,13 @@ const FilterSectionBody = styled.select`
   align-items: flex-start;
 `;
 
-const Filters = ({ open }) => {
-  const initialState = {
-    filters: {
-      price: '',
-      make: 'all',
-      location: 'all',
-    },
-  };
-
-  const [filterState, setFilterState] = useState(initialState.filters);
+const Filters = ({ open, filterState, setFilterState }) => {
 
   const handleFilterChange = (event) => {
     setFilterState({
       ...filterState,
       [event.target.name]: event.target.value,
     });
-    console.log(filterState);
   };
 
   return (

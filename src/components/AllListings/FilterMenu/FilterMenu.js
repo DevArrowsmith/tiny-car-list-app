@@ -9,7 +9,7 @@ const FilterMenuContainer = styled.div`
   width: fit-content;
 `;
 
-const FilterMenu = () => {
+const FilterMenu = ({ filterState, setFilterState }) => {
   const [filterOpen, setFilterOpen] = useState(false);
   const node = useRef();
   useOnClickOutside(node, () => setFilterOpen(false));
@@ -17,7 +17,11 @@ const FilterMenu = () => {
   return (
     <FilterMenuContainer ref={node}>
       <FilterButton filterOpen={filterOpen} setFilterOpen={setFilterOpen} />
-      <Filters open={filterOpen} />
+      <Filters
+        open={filterOpen}
+        filterState={filterState}
+        setFilterState={setFilterState}
+      />
     </FilterMenuContainer>
   );
 };
