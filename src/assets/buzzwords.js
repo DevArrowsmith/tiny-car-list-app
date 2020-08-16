@@ -1,5 +1,8 @@
 const buzzwords = {
   buzzOne: [
+    'grunge',
+    'nirvana',
+    'feel',
     'cuteness',
     'style',
     'class',

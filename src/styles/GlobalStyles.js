@@ -5,7 +5,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Contrail One', Helvetica, sans-serif;
     background-color: black;
   }
 `;
