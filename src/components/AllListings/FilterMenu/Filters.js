@@ -100,7 +100,7 @@ const Filters = ({ open }) => {
 
       <FilterSection>
         <FilterSectionHead htmlFor="make">Make</FilterSectionHead>
-        <select
+        <FilterSectionBody
           id="make"
           name="make"
           value={filterState.make}
@@ -114,12 +114,12 @@ const Filters = ({ open }) => {
           <option value="rockstone">Rockstone</option>
           <option value="stansa">Stansa</option>
           <option value="vista">Vista</option>
-        </select>
+        </FilterSectionBody>
       </FilterSection>
 
       <FilterSection>
         <FilterSectionHead htmlFor="location">Location</FilterSectionHead>
-        <select
+        <FilterSectionBody
           id="location"
           name="location"
           value={filterState.location}
@@ -140,9 +140,8 @@ const Filters = ({ open }) => {
           <option value="newcastle">Newcastle</option>
           <option value="sheffield">Sheffield</option>
           <option value="york">York</option>
-        </select>
+        </FilterSectionBody>
       </FilterSection>
-
     </StyledMenu>
   );
 };
