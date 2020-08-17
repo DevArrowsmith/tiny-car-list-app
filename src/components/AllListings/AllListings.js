@@ -62,19 +62,21 @@ const AllListings = ({ listings }) => {
   const [filteredListings, setFilteredListings] = useState(listings);
 
   const filterListings = () => {
+    const sortPrice = !filterState.price
+      ? listings.sort(priceSort.ascending)
+      : listings.sort(priceSort[filterState.price]);
+
     const makeFilter = !filterState.make
-      ? listings
-      : listings.filter((listing) => listing.make === filterState.make);
+      ? sortPrice
+      : sortPrice.filter((listing) => listing.make === filterState.make);
 
     const locationFilter = !filterState.location
       ? makeFilter
       : makeFilter.filter((listing) => listing.city === filterState.location);
 
-    const sortPrice = !filterState.price
-      ? locationFilter
-      : locationFilter.sort(priceSort[filterState.price]);
+    const finalList = locationFilter;
 
-    setFilteredListings(sortPrice);
+    setFilteredListings(finalList);
   };
 
   useEffect(() => {
