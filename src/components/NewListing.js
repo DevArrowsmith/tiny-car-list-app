@@ -105,6 +105,7 @@ const NewListing = () => {
       price: 10000,
       location: '',
       email: '',
+      password: '',
     },
   };
 
@@ -209,6 +210,19 @@ const NewListing = () => {
             name="email"
             placeholder="example@mail.com"
             value={fields.email}
+            onChange={handleFieldChange}
+            required
+          />
+        </FormElement>
+
+        <FormElement>
+          <Label htmlFor="password">Password:</Label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="********"
+            value={fields.password}
             onChange={handleFieldChange}
             required
           />
