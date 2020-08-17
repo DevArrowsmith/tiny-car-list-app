@@ -14,6 +14,7 @@ const NewListingContainer = styled.div`
 `;
 
 const Intro = styled.p`
+  width: calc(100% - 40px);
   margin: 0 20px 15px 20px;
 `;
 
@@ -45,7 +46,7 @@ const HeaderText = styled.span`
 `;
 
 const FormStyles = styled.form`
-  margin: 0 10px;
+width: 320px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: start;
@@ -70,17 +71,28 @@ const NumberInput = styled.input.attrs({
   -moz-appearance: textfield;
 `;
 
-const SubmitButton = styled.button`
-  height: 30px;
-  width: 160px;
-  padding: 5px 10px;
-  background: #9df9ef;
-  border: 1px solid #8e8e8e;
-  border-radius: 2px;
-  font-size: 1em;
+const ButtonContainer = styled.div`
+  width: 100%;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-evenly;
+  justify-content: center;
+`;
+
+
+const SubmitButton = styled.button`
+  height: 40px;
+  width: 40vw;
+  margin: 30px 0 0 0;
+  font-size: 1.2em;
+  color: black;
+  font-family: 'Contrail One', Helvetica, sans-serif;
+  font-weight: bold;
+  background: whitesmoke;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
   align-items: center;
 `;
 
@@ -202,11 +214,13 @@ const NewListing = () => {
           />
         </FormElement>
 
-        <FormElement>
+
+          <ButtonContainer>
           <SubmitButton type="submit">
-            <p>Create Listing!</p>
+            <p>Submit Listing!</p>
           </SubmitButton>
-        </FormElement>
+          </ButtonContainer>
+
       </FormStyles>
     </NewListingContainer>
   );
