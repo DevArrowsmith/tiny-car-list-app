@@ -88,7 +88,6 @@ const Filters = ({ open, filterState, setFilterState, filterListings }) => {
         >
           <option value="ascending">Sort Ascending</option>
           <option value="descending">Sort Descending</option>
-          <option value="">Don&apos;t Sort</option>
         </FilterSectionBody>
       </FilterSection>
 
@@ -101,7 +100,7 @@ const Filters = ({ open, filterState, setFilterState, filterListings }) => {
           onChange={handleFilterChange}
           required
         >
-          <option value="">All Makes</option>
+          <option value="all">All Makes</option>
           <option value="Chroma">Chroma</option>
           <option value="Coffeeshop">Coffeeshop</option>
           <option value="Kawaii">Kawaii</option>
@@ -120,7 +119,7 @@ const Filters = ({ open, filterState, setFilterState, filterListings }) => {
           onChange={handleFilterChange}
           required
         >
-          <option value="">All Locations</option>
+          <option value="all">All Locations</option>
           <option value="Belfast">Belfast</option>
           <option value="Birmingham">Birmingham</option>
           <option value="Bristol">Bristol</option>

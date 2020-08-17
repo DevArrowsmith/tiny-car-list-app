@@ -47,9 +47,9 @@ const HeaderText = styled.span`
 const AllListings = ({ listings }) => {
   const initialState = {
     filters: {
-      make: '',
-      location: '',
-      price: '',
+      make: 'all',
+      location: 'all',
+      price: 'ascending',
     },
   };
 
@@ -62,26 +62,38 @@ const AllListings = ({ listings }) => {
   const [filteredListings, setFilteredListings] = useState(listings);
 
   const filterListings = () => {
-    const sortPrice = !filterState.price
-      ? listings.sort(priceSort.ascending)
-      : listings.sort(priceSort[filterState.price]);
+    const sortPrice =
+      filterState.price === 'ascending'
+        ? listings.slice().sort((a, b) => a.price - b.price)
+        : listings.slice().sort((a, b) => b.price - a.price);
 
-    const makeFilter = !filterState.make
-      ? sortPrice
-      : sortPrice.filter((listing) => listing.make === filterState.make);
+    console.log(sortPrice === listings);
 
-    const locationFilter = !filterState.location
-      ? makeFilter
-      : makeFilter.filter((listing) => listing.city === filterState.location);
+    const makeFilter =
+      filterState.location === 'all'
+        ? sortPrice
+        : sortPrice.filter((listing) => listing.make === filterState.make);
+
+    console.log(makeFilter);
+
+    const locationFilter =
+      filterState.location === 'all'
+        ? makeFilter
+        : makeFilter.filter((listing) => listing.city === filterState.location);
 
     const finalList = locationFilter;
+
+    console.log(finalList);
 
     setFilteredListings(finalList);
   };
 
   useEffect(() => {
     filterListings();
+    console.log(filteredListings);
   }, [filterState]);
+
+  console.log(filteredListings);
 
   return (
     <AllListingsContainer>
@@ -96,7 +108,7 @@ const AllListings = ({ listings }) => {
         </FilterMenu>
       </Header>
 
-      <CardGenerator listings={filteredListings} />
+      <CardGenerator filteredListings={filteredListings} />
     </AllListingsContainer>
   );
 };
