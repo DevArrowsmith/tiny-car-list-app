@@ -1,6 +1,6 @@
-import React, from 'react';
+import React from 'react';
+import PropTypes, { bool } from 'prop-types';
 import styled from 'styled-components';
-import { bool } from 'prop-types';
 
 export const StyledMenu = styled.form`
   position: absolute;
@@ -65,15 +65,12 @@ const FilterSectionBody = styled.select`
 `;
 
 const Filters = ({ open, filterState, setFilterState }) => {
-
   const handleFilterChange = (event) => {
     setFilterState({
       ...filterState,
       [event.target.name]: event.target.value,
     });
   };
-
-  console.log(filterState);
 
   return (
     <StyledMenu open={open}>
@@ -141,6 +138,12 @@ const Filters = ({ open, filterState, setFilterState }) => {
 
 Filters.propTypes = {
   open: bool.isRequired,
+  filterState: PropTypes.shape({
+    make: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+  }).isRequired,
+  setFilterState: PropTypes.func.isRequired,
 };
 
 export default Filters;
