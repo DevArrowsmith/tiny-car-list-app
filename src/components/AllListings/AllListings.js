@@ -108,7 +108,7 @@ const AllListings = ({ listings }) => {
         </FilterMenu>
       </Header>
 
-      <CardGenerator filteredListings={filteredListings} />
+      <CardGenerator listings={listings} filteredListings={filteredListings} />
     </AllListingsContainer>
   );
 };
