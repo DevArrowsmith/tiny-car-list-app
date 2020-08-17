@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, from 'react';
 import styled from 'styled-components';
 import { bool } from 'prop-types';
 
@@ -64,7 +64,7 @@ const FilterSectionBody = styled.select`
   align-items: flex-start;
 `;
 
-const Filters = ({ open, filterState, setFilterState, filterListings }) => {
+const Filters = ({ open, filterState, setFilterState }) => {
 
   const handleFilterChange = (event) => {
     setFilterState({

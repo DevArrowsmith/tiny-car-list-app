@@ -53,11 +53,6 @@ const AllListings = ({ listings }) => {
     },
   };
 
-  const priceSort = {
-    ascending: (a, b) => a.price - b.price,
-    descending: (a, b) => b.price - a.price,
-  };
-
   const [filterState, setFilterState] = useState(initialState.filters);
   const [filteredListings, setFilteredListings] = useState(listings);
 
@@ -67,14 +62,10 @@ const AllListings = ({ listings }) => {
         ? listings.slice().sort((a, b) => a.price - b.price)
         : listings.slice().sort((a, b) => b.price - a.price);
 
-    console.log(sortPrice === listings);
-
     const makeFilter =
       filterState.location === 'all'
         ? sortPrice
         : sortPrice.filter((listing) => listing.make === filterState.make);
-
-    console.log(makeFilter);
 
     const locationFilter =
       filterState.location === 'all'
@@ -83,17 +74,12 @@ const AllListings = ({ listings }) => {
 
     const finalList = locationFilter;
 
-    console.log(finalList);
-
     setFilteredListings(finalList);
   };
 
   useEffect(() => {
     filterListings();
-    console.log(filteredListings);
   }, [filterState]);
-
-  console.log(filteredListings);
 
   return (
     <AllListingsContainer>
