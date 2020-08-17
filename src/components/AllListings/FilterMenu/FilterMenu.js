@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import useOnClickOutside from '../../../hooks/hooks';
 import FilterButton from './FilterButton';
@@ -25,6 +26,16 @@ const FilterMenu = ({ filterState, setFilterState, filterListings }) => {
       />
     </FilterMenuContainer>
   );
+};
+
+FilterMenu.propTypes = {
+  filterState: PropTypes.shape({
+    make: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+  }).isRequired,
+  setFilterState: PropTypes.func.isRequired,
+  filterListings: PropTypes.func.isRequired,
 };
 
 export default FilterMenu;
