@@ -63,7 +63,7 @@ const AllListings = ({ listings }) => {
         : listings.slice().sort((a, b) => b.price - a.price);
 
     const makeFilter =
-      filterState.location === 'all'
+      filterState.make === 'all'
         ? sortPrice
         : sortPrice.filter((listing) => listing.make === filterState.make);
 
