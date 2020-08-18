@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const ModelContainer = styled.div`
   height: fit-content;
-  width: calc(100vw - 150px);
+  width: calc(100% - 150px);
   margin: 0 0 0 150px;
   background: none;
   display: flex;

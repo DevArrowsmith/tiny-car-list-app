@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const BuzzContainer = styled.div`
   height: 120px;
-  width: calc(100vw - 30px);
+  width: calc(100% - 30px);
   margin: 0 0 0 30px;
   background: none;
   display: flex;

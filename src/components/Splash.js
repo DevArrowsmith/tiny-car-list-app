@@ -40,7 +40,8 @@ const MainContainer = styled.div`
 
 const ButtonContainer = styled.div`
   height: 40px;
-  width: 100vw;
+  width: 100%;
+  max-width: 360px;
   margin: 20px 20px;
   display: flex;
   flex-flow: row nowrap;
@@ -91,15 +92,14 @@ const Splash = ({ selectedListing, buzzState }) => {
         >
           <BuzzPhrase buzzState={buzzState} />
           <ModelPhrase
-          make={selectedListing.make}
-          model={selectedListing.model}
+            make={selectedListing.make}
+            model={selectedListing.model}
           />
-
         </MainContainer>
         <ButtonContainer>
-            <NavButton to="/Listing">View listing!</NavButton>
-            <NavButton to="/AllListings">All Cars</NavButton>
-          </ButtonContainer>
+          <NavButton to="/Listing">View listing!</NavButton>
+          <NavButton to="/AllListings">All Cars</NavButton>
+        </ButtonContainer>
       </SplashContainer>
     </ThemeProvider>
   ) : (
