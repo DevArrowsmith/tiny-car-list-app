@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const BuzzContainer = styled.div`
-  height: 120px;
-  width: calc(100vw - 30px);
-  margin: 0 0 0 30px;
+const ModelContainer = styled.div`
+  height: fit-content;
+  width: calc(100vw - 150px);
+  margin: 0 0 0 150px;
   background: none;
   display: flex;
   flex-flow: column nowrap;
-  align-items: flex-start;
   justify-content: flex-start;
+  align-items: flex-start;
 `;
 
 const FontOne = styled.span`
@@ -26,17 +26,19 @@ const FontTwo = styled.span`
   color: white;
 `;
 
-const BuzzPhrase = ({ buzzState }) => {
+const ModelPhrase = ({ make, model }) => {
   return (
-    <BuzzContainer>
-      <FontOne>{buzzState[0]}</FontOne>
-      <FontTwo>{buzzState[1]}</FontTwo>
-    </BuzzContainer>
+    <ModelContainer>
+      <FontOne>the</FontOne>
+      <FontTwo>{make}</FontTwo>
+      <FontTwo>{model}</FontTwo>
+    </ModelContainer>
   );
 };
 
-BuzzPhrase.propTypes = {
-  buzzState: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+ModelPhrase.propTypes = {
+  make: PropTypes.string.isRequired,
+  model: PropTypes.string.isRequired,
 };
 
-export default BuzzPhrase;
+export default ModelPhrase;

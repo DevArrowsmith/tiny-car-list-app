@@ -4,7 +4,8 @@ import styled, { ThemeProvider } from 'styled-components';
 import { up } from 'styled-breakpoints';
 import { Link } from 'react-router-dom';
 import breakpoints from '../styles/breakpoints';
-import Buzzphrase from './BuzzPhrase';
+import BuzzPhrase from './BuzzPhrase';
+import ModelPhrase from './ModelPhrase';
 
 const SplashContainer = styled.div`
   height: 100vh;
@@ -16,79 +17,31 @@ const SplashContainer = styled.div`
   align-items: center;
 `;
 
-const ContentContainer = styled.div`
-  position: relative;
-  height: fit-content;
-  width: 100vw;
+const MainContainer = styled.div`
+  height: 520px;
+  width: 100%;
+  max-width: 360px;
   margin: 60px 0 0 0;
   padding: 20px 0 0 0;
-  background: black;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  
-  ${up('smmd')} {
-    width: 580px;
-  }
-
-`;
-
-const ImageFrame = styled.div`
-  height: 325px;
-  width: 325px;
-  margin: 50px 0 0 0;
-  background: url('./images/FrameRed.png');
-  background-size: contain;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-`;
-
-const CarImage = styled.div`
-  height: 280px;
-  width: 280px;
-  background: url(${(props) => props.imgurl});
-  background-size: contain;
-  background-position: center;
+  background-image: url(${(props) => props.imgurl}),
+    url('./images/FrameRed.png');
+  background-size: 85%, 90%;
+  background-position: center 44%, center 35%;
   background-repeat: no-repeat;
-`;
-
-const AnnounceContainer = styled.div`
-  position: absolute;
-  left: 35%;
-  top: 30px;
-  z-index: 1;
-  height: 140px;
-  width: 300px;
-  margin: 340px 0 0 0px;
-  background: none;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: flex-end;
-`;
+  justify-content: space-between;
+  align-items: center;
 
-const FontOne = styled.span`
-  font-family: 'Lato', sans-serif;
-  font-size: 2.2em;
-  color: white;
-  width: calc(300px - 80px);
-`;
-
-const FontTwo = styled.span`
-  margin: 0 0 0 20px;
-  font-family: 'Contrail One', Helvetica, sans-serif;
-  font-size: 2.2em;
-  color: white;
-  width: calc(300px - 110px);
+  ${up('sm')} {
+    width: 360px;
+  }
 `;
 
 const ButtonContainer = styled.div`
   height: 40px;
   width: 100vw;
-  margin: 110px 20px 0 20px;
+  margin: 20px 20px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
@@ -129,27 +82,24 @@ const NavButton = styled(Link)`
   }
 `;
 
-const Splash = ({ selectedListing, buzzState }) => {
+const Splash2 = ({ selectedListing, buzzState }) => {
   return selectedListing ? (
     <ThemeProvider theme={breakpoints}>
       <SplashContainer>
-        <ContentContainer>
-          <Buzzphrase buzzState={buzzState} />
-          <ImageFrame>
-            <CarImage
-              imgurl={`https://res.cloudinary.com/gummicode/image/upload/tinycarlist/${selectedListing.imgref}.png`}
-            />
-          </ImageFrame>
-          <AnnounceContainer>
-            <FontOne>the</FontOne>
-            <FontTwo>{selectedListing.make}</FontTwo>
-            <FontTwo>{selectedListing.model}</FontTwo>
-          </AnnounceContainer>
-          <ButtonContainer>
+        <MainContainer
+          imgurl={`https://res.cloudinary.com/gummicode/image/upload/tinycarlist/${selectedListing.imgref}.png`}
+        >
+          <BuzzPhrase buzzState={buzzState} />
+          <ModelPhrase
+          make={selectedListing.make}
+          model={selectedListing.model}
+          />
+
+        </MainContainer>
+        <ButtonContainer>
             <NavButton to="/Listing">View listing!</NavButton>
             <NavButton to="/AllListings">All Cars</NavButton>
           </ButtonContainer>
-        </ContentContainer>
       </SplashContainer>
     </ThemeProvider>
   ) : (
@@ -159,7 +109,7 @@ const Splash = ({ selectedListing, buzzState }) => {
   );
 };
 
-Splash.propTypes = {
+Splash2.propTypes = {
   selectedListing: PropTypes.shape({
     imgref: PropTypes.string.isRequired,
     make: PropTypes.string.isRequired,
@@ -172,4 +122,4 @@ Splash.propTypes = {
   buzzState: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 };
 
-export default Splash;
+export default Splash2;

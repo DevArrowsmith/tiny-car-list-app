@@ -81,7 +81,8 @@ const ButtonContainer = styled.div`
 
 const SubmitButton = styled.button`
   height: 40px;
-  width: 40vw;
+  width: 40%;
+  max-width: 140px;
   margin: 30px 0;
   font-size: 1.2em;
   color: black;

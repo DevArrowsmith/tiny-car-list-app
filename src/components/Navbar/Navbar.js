@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
-
-import { up } from "styled-breakpoints";
+import { up } from 'styled-breakpoints';
 // eslint-disable-next-line import/no-unresolved
-import breakpoints from "../../styles/breakpoints"
+import breakpoints from '../../styles/breakpoints';
 import BurgerMenu from './BurgerMenu/BurgerMenu';
 
 const NavbarContainer = styled.div`
@@ -20,7 +19,7 @@ const NavbarContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  ${up("md")} {
+  ${up('md')} {
     width: calc(100vw - 15px);
     padding: 0 15px 0 0;
   }
@@ -57,15 +56,15 @@ const NavHeader = styled(Link)`
 
 const Navbar = () => (
   <ThemeProvider theme={breakpoints}>
-  <NavbarContainer>
-    <NavSection>
-      <NavHeader to="/">TinyCarList</NavHeader>
-    </NavSection>
-    <NavSection>
-      <BurgerMenu />
-    </NavSection>
-  </NavbarContainer>
-  </ThemeProvider >
+    <NavbarContainer>
+      <NavSection>
+        <NavHeader to="/">TinyCarList</NavHeader>
+      </NavSection>
+      <NavSection>
+        <BurgerMenu />
+      </NavSection>
+    </NavbarContainer>
+  </ThemeProvider>
 );
 
 export default Navbar;
