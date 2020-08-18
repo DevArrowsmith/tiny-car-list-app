@@ -1,14 +1,22 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
+import { up } from 'styled-breakpoints';
+import breakpoints from '../../../styles/breakpoints';
 import useOnClickOutside from '../../../hooks/hooks';
+
 import FilterButton from './FilterButton';
 import Filters from './Filters';
 
 const FilterMenuContainer = styled.div`
   height: 60px;
   width: fit-content;
+
+  ${up('sm')} {
+    margin: 0 20px 0 0;
+  }
 `;
+
 
 const FilterMenu = ({ filterState, setFilterState, filterListings }) => {
   const [filterOpen, setFilterOpen] = useState(false);
@@ -16,6 +24,7 @@ const FilterMenu = ({ filterState, setFilterState, filterListings }) => {
   useOnClickOutside(node, () => setFilterOpen(false));
 
   return (
+    <ThemeProvider theme={breakpoints}>
     <FilterMenuContainer ref={node}>
       <FilterButton filterOpen={filterOpen} setFilterOpen={setFilterOpen} />
       <Filters
@@ -25,6 +34,7 @@ const FilterMenu = ({ filterState, setFilterState, filterListings }) => {
         filterListings={filterListings}
       />
     </FilterMenuContainer>
+    </ThemeProvider>
   );
 };
 
