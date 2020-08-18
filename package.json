@@ -1,6 +1,6 @@
 {
   "name": "tiny-car-list-api",
-  "homepage": "http://gummicode.github.io/tiny-car-list-app",
+  "homepage": "http://gummicode.github.io/tiny-car-list-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

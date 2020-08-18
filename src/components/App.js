@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import GlobalStyles from '../styles/GlobalStyles';
 import Navbar from './Navbar/Navbar';
 import Splash from './Splash';
-import Splash2 from './Splash';
 import Listing from './Listing';
 import AllListings from './AllListings/AllListings';
 import NewListing from './NewListing';
@@ -47,7 +46,7 @@ const App = () => {
           exact
           path="/"
           component={() => (
-            <Splash2
+            <Splash
               selectedListing={listingsState[selectedState]}
               buzzState={buzzState}
             />
