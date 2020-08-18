@@ -122,7 +122,7 @@ const NewListing = () => {
       price: 10000,
       location: '',
       email: '',
-      Authorizer: '',
+      password: '',
     },
     alert:
       'NB: This is a demo site, and for practical purposes an authorization code is required for users to submit new lisitings to the database.',
@@ -139,6 +139,7 @@ const NewListing = () => {
   };
 
   const handleAddListing = async (event) => {
+    console.log(fields);
     event.preventDefault();
     setAlert('');
     const res = await postListing(fields);
@@ -252,11 +253,11 @@ const NewListing = () => {
         </FormElement>
 
         <FormElement>
-          <Label htmlFor="authorization">Authorization:</Label>
+          <Label htmlFor="password">Password:</Label>
           <input
-            type="authorization"
-            id="authorization"
-            name="authorization"
+            type="password"
+            id="password"
+            name="password"
             placeholder="********"
             value={fields.authorization}
             onChange={handleFieldChange}

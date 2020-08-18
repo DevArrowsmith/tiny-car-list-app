@@ -1,13 +1,14 @@
 const axios = require('axios');
 
 const postListing = async (newListing) => {
+  console.log(newListing.password);
   try {
     const res = await axios({
       method: 'post',
       url: `http://tiny-car-list-api.herokuapp.com/listing`,
       data: newListing,
       headers: {
-        authorizer: newListing.password,
+        Authorizer: newListing.password,
       },
     });
     console.log(res);
