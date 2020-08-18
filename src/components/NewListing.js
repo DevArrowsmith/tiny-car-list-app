@@ -139,16 +139,13 @@ const NewListing = () => {
   };
 
   const handleAddListing = async (event) => {
-    console.log(fields);
     event.preventDefault();
     setAlert('');
     const res = await postListing(fields);
     if (res.status === 201) {
-      console.log('Post test OK!');
       setAlert('Your listing has been added to TinyCarList!');
     }
     if (res === 401) {
-      console.log('Unauth test OK!');
       setAlert(
         'Sorry, you are not authorized to add listings to TinyCarList. An incorrect authorization password was entered.'
       );
