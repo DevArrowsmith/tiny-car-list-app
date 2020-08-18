@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import postListing from '../controllers/newListingController';
 
 const NewListingContainer = styled.div`
   height: calc(100vh - 120px - 20px);
@@ -46,7 +47,7 @@ const HeaderText = styled.span`
 `;
 
 const FormStyles = styled.form`
-width: 320px;
+  width: 320px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: start;
@@ -78,11 +79,10 @@ const ButtonContainer = styled.div`
   justify-content: center;
 `;
 
-
 const SubmitButton = styled.button`
   height: 40px;
   width: 40vw;
-  margin: 30px 0 0 0;
+  margin: 30px 0;
   font-size: 1.2em;
   color: black;
   font-family: 'Contrail One', Helvetica, sans-serif;
@@ -96,6 +96,20 @@ const SubmitButton = styled.button`
   align-items: center;
 `;
 
+const Footer = styled.div`
+  top: 60px;
+  left: 0px;
+  height: fit-content;
+  width: 80vw;
+  font-size: 0.9em;
+  color: white;
+  background: black;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+`;
+
 const NewListing = () => {
   const initialState = {
     fields: {
@@ -105,17 +119,39 @@ const NewListing = () => {
       price: 10000,
       location: '',
       email: '',
-      password: '',
+      authorization: '',
     },
+    alert:
+      'NB: This is a demo site, and for practical purposes an authorization code is required for users to submit new lisitings to the database.',
   };
 
   const [fields, setFields] = useState(initialState.fields);
+  const [alert, setAlert] = useState(initialState.alert);
 
   const handleFieldChange = (event) => {
     setFields({
       ...fields,
       [event.target.name]: event.target.value,
     });
+  };
+
+  const handleAddListing = async (event) => {
+    event.preventDefault();
+    setAlert('');
+    const res = await postListing(fields);
+    console.log(res);
+    console.log(res.body.error);
+    console.log(res.Error);
+    if (res.status === 201) {
+      console.log('Post test OK!');
+      setAlert('Your listing has been added to TinyCarList!');
+    }
+    if (res.status === 401) {
+      console.log('Unauth test OK!');
+      setAlert(
+        'Sorry, you are not authorized to add listings to TinyCarList. An incorrect authorization password was entered.'
+      );
+    }
   };
 
   return (
@@ -130,7 +166,7 @@ const NewListing = () => {
         to come in.
       </Intro>
 
-      <FormStyles>
+      <FormStyles onSubmit={handleAddListing}>
         <FormElement>
           <Label htmlFor="make">Make</Label>
           <input
@@ -216,25 +252,25 @@ const NewListing = () => {
         </FormElement>
 
         <FormElement>
-          <Label htmlFor="password">Password:</Label>
+          <Label htmlFor="authorization">Authorization:</Label>
           <input
-            type="password"
-            id="password"
-            name="password"
+            type="authorization"
+            id="authorization"
+            name="authorization"
             placeholder="********"
-            value={fields.password}
+            value={fields.authorization}
             onChange={handleFieldChange}
             required
           />
         </FormElement>
 
-
-          <ButtonContainer>
+        <ButtonContainer>
           <SubmitButton type="submit">
             <p>Submit Listing!</p>
           </SubmitButton>
-          </ButtonContainer>
+        </ButtonContainer>
 
+        <Footer>{alert}</Footer>
       </FormStyles>
     </NewListingContainer>
   );

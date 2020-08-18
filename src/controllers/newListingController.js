@@ -6,6 +6,9 @@ const postListing = async (newListing) => {
       method: 'post',
       url: `http://tiny-car-list-api.herokuapp.com/listing`,
       data: newListing,
+      headers: {
+        authorizer: newListing.password,
+      },
     });
     console.log(res);
     return res;
