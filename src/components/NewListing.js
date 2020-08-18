@@ -16,6 +16,7 @@ const NewListingContainer = styled.div`
 
 const Intro = styled.p`
   width: calc(100% - 40px);
+  max-width: 320px;
   margin: 0 20px 15px 20px;
 `;
 
@@ -102,6 +103,7 @@ const Footer = styled.div`
   left: 0px;
   height: fit-content;
   width: 80vw;
+  max-width: 320px;
   font-size: 0.9em;
   color: white;
   background: black;
