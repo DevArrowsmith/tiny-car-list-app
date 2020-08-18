@@ -122,7 +122,7 @@ const NewListing = () => {
       price: 10000,
       location: '',
       email: '',
-      password: '',
+      authorization: '',
     },
     alert:
       'NB: This is a demo site, and for practical purposes an authorization code is required for users to submit new lisitings to the database.',
@@ -253,11 +253,11 @@ const NewListing = () => {
         </FormElement>
 
         <FormElement>
-          <Label htmlFor="password">Password:</Label>
+          <Label htmlFor="authorization">Authorization:</Label>
           <input
-            type="password"
-            id="password"
-            name="password"
+            type="authorization"
+            id="authorization"
+            name="authorization"
             placeholder="********"
             value={fields.authorization}
             onChange={handleFieldChange}
