@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/tiny-car-list-app/static/js/main.fdee588a.chunk.js",
+    "main.js.map": "/tiny-car-list-app/static/js/main.fdee588a.chunk.js.map",
+    "runtime-main.js": "/tiny-car-list-app/static/js/runtime-main.27bb3320.js",
+    "runtime-main.js.map": "/tiny-car-list-app/static/js/runtime-main.27bb3320.js.map",
+    "static/js/2.eed5a225.chunk.js": "/tiny-car-list-app/static/js/2.eed5a225.chunk.js",
+    "static/js/2.eed5a225.chunk.js.map": "/tiny-car-list-app/static/js/2.eed5a225.chunk.js.map",
+    "index.html": "/tiny-car-list-app/index.html",
+    "precache-manifest.965f597319587c36aa5d842ebbfaf9ba.js": "/tiny-car-list-app/precache-manifest.965f597319587c36aa5d842ebbfaf9ba.js",
+    "service-worker.js": "/tiny-car-list-app/service-worker.js",
+    "static/js/2.eed5a225.chunk.js.LICENSE.txt": "/tiny-car-list-app/static/js/2.eed5a225.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.27bb3320.js",
+    "static/js/2.eed5a225.chunk.js",
+    "static/js/main.fdee588a.chunk.js"
+  ]
+}
