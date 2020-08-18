@@ -13,7 +13,8 @@ const postListing = async (newListing) => {
     console.log(res);
     return res;
   } catch (error) {
-    return error;
+    const res = error.response.status;
+    return res;
   }
 };
 

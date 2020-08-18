@@ -122,7 +122,7 @@ const NewListing = () => {
       price: 10000,
       location: '',
       email: '',
-      authorization: '',
+      Authorizer: '',
     },
     alert:
       'NB: This is a demo site, and for practical purposes an authorization code is required for users to submit new lisitings to the database.',
@@ -142,14 +142,11 @@ const NewListing = () => {
     event.preventDefault();
     setAlert('');
     const res = await postListing(fields);
-    console.log(res);
-    console.log(res.body.error);
-    console.log(res.Error);
     if (res.status === 201) {
       console.log('Post test OK!');
       setAlert('Your listing has been added to TinyCarList!');
     }
-    if (res.status === 401) {
+    if (res === 401) {
       console.log('Unauth test OK!');
       setAlert(
         'Sorry, you are not authorized to add listings to TinyCarList. An incorrect authorization password was entered.'
