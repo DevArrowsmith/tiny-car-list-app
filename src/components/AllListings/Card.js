@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import FrameRed from '../../assets/images/FrameRed.png';
 
 const CardContainer = styled.div`
   width: 260px;
@@ -20,7 +21,7 @@ const ImageFrame = styled.div`
   height: 260px;
   width: 260px;
   margin: 0 0 20px 0;
-  background: url(./images/FrameRed.png);
+  background: url(${FrameRed});
   background-size: contain;
   border-radius: 20px 20px 0 0;
   display: flex;
