@@ -5,7 +5,7 @@ import { up } from 'styled-breakpoints';
 import { Link } from 'react-router-dom';
 import breakpoints from '../styles/breakpoints';
 import Buzzphrase from './library/Buzzphrase';
-import ModelPhrase from './library/ModelPhrase';
+import Modelphrase from './library/Modelphrase';
 import frameRed from '../assets/images/FrameRed.png';
 import frameBlack from '../assets/images/FrameBlack.png';
 
@@ -110,7 +110,7 @@ const Splash = ({ selectedListing, buzzState }) => {
           imgurl={`https://res.cloudinary.com/gummicode/image/upload/tinycarlist/${selectedListing.imgref}.png`}
         >
           <Buzzphrase buzzState={buzzState} />
-          <ModelPhrase
+          <Modelphrase
             make={selectedListing.make}
             model={selectedListing.model}
           />

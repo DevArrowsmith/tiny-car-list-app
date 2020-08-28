@@ -8,8 +8,8 @@ const CardContainer = styled.div`
   width: 260px;
   height: fit-content;
   margin: 10px;
-  background: black;
-  border: 1px solid #212121;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
   border-radius: 20px;
   display: flex;
   flex-flow: column wrap;

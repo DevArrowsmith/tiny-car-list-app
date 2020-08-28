@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import CardGenerator from './CardGenerator';
 import FilterMenu from './FilterMenu/FilterMenu';
+import road2 from '../../assets/images/roads/road2.png';
 
 const AllListingsContainer = styled.div`
   height: fit-content;
   width: calc(100vw - 10px);
   margin: 120px 0 0 0;
   padding: 5px;
-  background: black;
+  background: url(${road2}) no-repeat center center fixed;
+  background-size: cover;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
