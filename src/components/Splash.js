@@ -6,11 +6,18 @@ import { Link } from 'react-router-dom';
 import breakpoints from '../styles/breakpoints';
 import Buzzphrase from './Buzzphrase';
 import ModelPhrase from './ModelPhrase';
+import frameRed from '../assets/images/FrameRed.png';
+import frameBlack from '../assets/images/FrameBlack.png';
+
+import frameYellow from '../assets/images/FrameYellow.png';
+import road1 from '../assets/images/roads/road1.png';
 
 const SplashContainer = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
-  background: black;
+  background-image: url(${road1});
+  background-position: bottom;
+  background-size: cover;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
@@ -18,20 +25,22 @@ const SplashContainer = styled.div`
 `;
 
 const MainContainer = styled.div`
-  height: 520px;
+  height: 100vh;
   min-height: 520px;
   width: 100%;
   max-width: 360px;
   margin: 60px 0 0 0;
   padding: 20px 0 0 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
   background-image: url(${(props) => props.imgurl}),
-    url('./images/FrameRed.png');
-  background-size: 85%, 90%;
-  background-position: center 44%, center 35%;
+    url(${frameYellow});
+  background-size: 85%, 100%;
+  background-position: center 170px, center 60px;
   background-repeat: no-repeat;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 
   ${up('sm')} {
@@ -43,7 +52,7 @@ const ButtonContainer = styled.div`
   height: 40px;
   width: 100%;
   max-width: 360px;
-  margin: 20px 20px;
+  padding: 20px 0;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
@@ -106,11 +115,11 @@ const Splash = ({ selectedListing, buzzState }) => {
             make={selectedListing.make}
             model={selectedListing.model}
           />
+          <ButtonContainer>
+            <NavButton to="/Listing">View listing!</NavButton>
+            <NavButton to="/AllListings">All Cars</NavButton>
+          </ButtonContainer>
         </MainContainer>
-        <ButtonContainer>
-          <NavButton to="/Listing">View listing!</NavButton>
-          <NavButton to="/AllListings">All Cars</NavButton>
-        </ButtonContainer>
       </SplashContainer>
     </ThemeProvider>
   ) : (
