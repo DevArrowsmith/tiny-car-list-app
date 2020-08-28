@@ -10,7 +10,15 @@ const ModelContainer = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: flex-end;
+
+  div{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-conten: flex-start;
+    align-items: flex-start;
+    margin: 0 40px 0 0;
+  }
 `;
 
 const FontOne = styled.span`
@@ -29,9 +37,11 @@ const FontTwo = styled.span`
 const ModelPhrase = ({ make, model }) => {
   return (
     <ModelContainer>
+      <div>
       <FontOne>the</FontOne>
       <FontTwo>{make}</FontTwo>
       <FontTwo>{model}</FontTwo>
+      </div>
     </ModelContainer>
   );
 };
