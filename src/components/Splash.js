@@ -8,8 +8,8 @@ import Buzzphrase from './library/Buzzphrase';
 import Modelphrase from './library/Modelphrase';
 import frameRed from '../assets/images/FrameRed.png';
 import frameBlack from '../assets/images/FrameBlack.png';
-
-import frameYellow from '../assets/images/FrameYellow.png';
+import frameYellow from '../assets/images/FrameYellowB.png';
+import frame from '../assets/images/Frame.png';
 import road1 from '../assets/images/roads/road1.png';
 
 const SplashContainer = styled.div`
@@ -25,17 +25,17 @@ const SplashContainer = styled.div`
 `;
 
 const MainContainer = styled.div`
-  height: calc(100vh - 60px - 20px);
+  height: calc(100vh - 60px);
   width: 100%;
   max-width: 360px;
   margin: 60px 0 0 0;
-  padding: 20px 0 0 0;
+  padding: 10px 0 0 0;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(2px);
   background-image: url(${(props) => props.imgurl}),
     url(${frameYellow});
   background-size: 85%, 100%;
-  background-position: center 170px, center 60px;
+  background-position: center 170px, center 90px;
   background-repeat: no-repeat;
   display: flex;
   flex-flow: column nowrap;
