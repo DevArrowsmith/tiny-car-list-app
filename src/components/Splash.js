@@ -4,7 +4,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { up } from 'styled-breakpoints';
 import { Link } from 'react-router-dom';
 import breakpoints from '../styles/breakpoints';
-import BuzzPhrase from './BuzzPhrase';
+import Buzzphrase from './Buzzphrase';
 import ModelPhrase from './ModelPhrase';
 
 const SplashContainer = styled.div`
@@ -84,6 +84,16 @@ const NavButton = styled(Link)`
   }
 `;
 
+const LoadingMessage = styled.h2`
+  width: 100vw;
+  margin: 120px 0 0 0;
+  padding: 0; 
+  color: white;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+`;
+
 const Splash = ({ selectedListing, buzzState }) => {
   return selectedListing ? (
     <ThemeProvider theme={breakpoints}>
@@ -91,7 +101,7 @@ const Splash = ({ selectedListing, buzzState }) => {
         <MainContainer
           imgurl={`https://res.cloudinary.com/gummicode/image/upload/tinycarlist/${selectedListing.imgref}.png`}
         >
-          <BuzzPhrase buzzState={buzzState} />
+          <Buzzphrase buzzState={buzzState} />
           <ModelPhrase
             make={selectedListing.make}
             model={selectedListing.model}
@@ -105,7 +115,7 @@ const Splash = ({ selectedListing, buzzState }) => {
     </ThemeProvider>
   ) : (
     <ThemeProvider theme={breakpoints}>
-      <loadingMessage>Loading...</loadingMessage>
+      <LoadingMessage>Loading...</LoadingMessage>
     </ThemeProvider>
   );
 };
