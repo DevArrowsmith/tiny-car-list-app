@@ -30,6 +30,7 @@ const Header = styled.div`
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
 `;
 
 const HeaderText = styled.span`
