@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const ModelContainer = styled.div`
   height: fit-content;
   width: calc(100% - 150px);
-  margin: 220px 0 0 150px;
+  margin: 230px 0 0 150px;
   background: none;
   display: flex;
   flex-flow: column nowrap;

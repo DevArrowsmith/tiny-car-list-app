@@ -4,8 +4,8 @@ import styled, { ThemeProvider } from 'styled-components';
 import { up } from 'styled-breakpoints';
 import { Link } from 'react-router-dom';
 import breakpoints from '../styles/breakpoints';
-import Buzzphrase from './Buzzphrase';
-import ModelPhrase from './ModelPhrase';
+import Buzzphrase from './library/Buzzphrase';
+import ModelPhrase from './library/ModelPhrase';
 import frameRed from '../assets/images/FrameRed.png';
 import frameBlack from '../assets/images/FrameBlack.png';
 
@@ -13,7 +13,7 @@ import frameYellow from '../assets/images/FrameYellow.png';
 import road1 from '../assets/images/roads/road1.png';
 
 const SplashContainer = styled.div`
-  min-height: 100vh;
+  height: 100vh;
   width: 100vw;
   background-image: url(${road1});
   background-position: bottom;
@@ -25,8 +25,7 @@ const SplashContainer = styled.div`
 `;
 
 const MainContainer = styled.div`
-  height: 100vh;
-  min-height: 520px;
+  height: calc(100vh - 60px - 20px);
   width: 100%;
   max-width: 360px;
   margin: 60px 0 0 0;
@@ -52,7 +51,7 @@ const ButtonContainer = styled.div`
   height: 40px;
   width: 100%;
   max-width: 360px;
-  padding: 20px 0;
+  padding: 20px 0 0 0;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
