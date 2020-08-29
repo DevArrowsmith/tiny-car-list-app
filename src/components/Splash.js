@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { ThemeProvider } from 'styled-components';
-import { up } from 'styled-breakpoints';
-import breakpoints from '../styles/breakpoints';
+import styled from 'styled-components';
 import LoadingMessage from './library/LoadingMessage';
 import Buzzphrase from './library/Buzzphrase';
 import Modelphrase from './library/Modelphrase';
@@ -11,8 +9,8 @@ import frameYellow from '../assets/images/FrameYellowB.png';
 import road1 from '../assets/images/roads/road1.png';
 
 const SplashContainer = styled.div`
-  height: 100vh;
-  width: 100vw;
+  min-height: calc(100vh - 60px);
+  margin: 60px 0 0 0;
   background-image: url(${road1});
   background-position: bottom;
   background-size: cover;
@@ -23,10 +21,9 @@ const SplashContainer = styled.div`
 `;
 
 const MainContainer = styled.div`
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
   width: 100%;
   max-width: 360px;
-  margin: 60px 0 0 0;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(2px);
   display: flex;
@@ -34,14 +31,28 @@ const MainContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
 
-  ${up('sm')} {
-    width: 360px;
+  @media (min-width: 360px) {
+    min-height: calc(100vh - 60px - 5vh);
+    min-width: 360px;
+    padding: 5vh 0 0 0;
+  }
+
+  @media (min-width: 460px) {
+    min-height: calc(100vh - 60px - 10vh);
+    min-width: 360px;
+    padding: 10vh 0 0 0;
+  }
+
+  @media (min-width: 768px) {
+    min-width: 480px;
   }
 `;
 
 const FeaturedCar = styled.div`
   height: 79.5vw;
   width: 100vw;
+  max-height: calc(0.795 * 360px);
+  max-width: 360px;
   background-image: url(${frameYellow});
   background-size: contain;
   background-position: center;
@@ -51,9 +62,22 @@ const FeaturedCar = styled.div`
   justify-content: center;
   align-items: center;
 
-  ${up('sm')} {
+  @media (min-width: 360px) {
+    min-width: 360px;
+  }
+
+  @media (min-width: 460px) {
     height: calc(0.795 * 360px);
+    min-height: calc(0.795 * 360px);
     width: 360px;
+    min-width: 360px;
+  }
+
+  @media (min-width: 768px) {
+    height: calc(0.795 * 480px);
+    min-height: calc(0.795 * 480px);
+    width: 480px;
+    min-width: 480px;
   }
 
   img {
@@ -63,28 +87,24 @@ const FeaturedCar = styled.div`
 
 const Splash = ({ selectedListing, buzzState }) => {
   return selectedListing ? (
-    <ThemeProvider theme={breakpoints}>
-      <SplashContainer>
-        <MainContainer>
-          <Buzzphrase buzzState={buzzState} />
-          <FeaturedCar>
-            <img
-              src={`https://res.cloudinary.com/gummicode/image/upload/tinycarlist/${selectedListing.imgref}.png`}
-              alt="A featured car"
-            />
-          </FeaturedCar>
-          <Modelphrase
-            make={selectedListing.make}
-            model={selectedListing.model}
+    <SplashContainer>
+      <MainContainer>
+        <Buzzphrase buzzState={buzzState} />
+        <FeaturedCar>
+          <img
+            src={`https://res.cloudinary.com/gummicode/image/upload/tinycarlist/${selectedListing.imgref}.png`}
+            alt="A featured car"
           />
-          <SplashButtons />
-        </MainContainer>
-      </SplashContainer>
-    </ThemeProvider>
+        </FeaturedCar>
+        <Modelphrase
+          make={selectedListing.make}
+          model={selectedListing.model}
+        />
+        <SplashButtons />
+      </MainContainer>
+    </SplashContainer>
   ) : (
-    <ThemeProvider theme={breakpoints}>
-      <LoadingMessage />
-    </ThemeProvider>
+    <LoadingMessage />
   );
 };
 

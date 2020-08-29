@@ -16,6 +16,10 @@ const FontOne = styled.span`
   font-family: 'Lato';
   font-size: 1.8em;
   color: white;
+
+  @media (min-width: 768px) {
+  font-size: 3em;
+}
 `;
 
 const FontTwo = styled.span`
@@ -23,6 +27,10 @@ const FontTwo = styled.span`
   font-family: 'Contrail One', Helvetica, sans-serif;
   font-size: 1.8em;
   color: white;
+
+  @media (min-width: 768px) {
+  font-size: 3em;
+}
 `;
 
 const BuzzPhrase = ({ buzzState }) => {

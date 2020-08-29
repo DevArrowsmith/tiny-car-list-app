@@ -10,6 +10,12 @@ const ButtonContainer = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
+
+  @media (min-width: 768px) {
+    height: auto;
+    max-width: 100%;
+    padding: 20px 0 0 0;
+  }
 `;
 
 const NavButton = styled(Link)`
@@ -27,6 +33,12 @@ const NavButton = styled(Link)`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 768px) {
+    height: 60px;
+    max-width: 220px;
+    font-size: 2em;
+  }
 
   &:visited {
     background: whitesmoke;
