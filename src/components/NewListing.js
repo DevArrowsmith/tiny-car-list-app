@@ -48,18 +48,34 @@ const MainContainer = styled.div`
   width: 100vw;
   max-width: 360px;
   padding: 20px 0 0 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(2px);
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
+
+  @media (min-width: 768px) {
+    min-height: auto;
+    margin: 60px;
+    padding: 60px 50px;
+    border-radius: 20px;
+
+  }
 `;
 
 const Intro = styled.p`
   width: calc(100% - 40px);
   max-width: 320px;
   margin: 0 20px 15px 20px;
+
+  @media (min-width: 360px) {
+    font-size: 1.2em;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1.4em;
+  }
 `;
 
 const FormStyles = styled.form`
@@ -76,6 +92,10 @@ const FormElement = styled.div`
   flex-flow: row nowrap;
   justify-content: start;
   margin: 10px 0 0 0;
+
+  @media (min-width: 460px) {
+    font-size: 1.2em;
+  }
 `;
 
 const Label = styled.label`
@@ -97,7 +117,7 @@ const ButtonContainer = styled.div`
 
 const SubmitButton = styled.button`
   height: 40px;
-  width: 50%;
+  width: 56%;
   max-width: 140px;
   margin: 30px 0;
   font-size: 1.2em;
@@ -124,6 +144,10 @@ const Footer = styled.div`
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 460px) {
+    font-size: 1.2em;
+  }
 `;
 
 const NewListing = () => {
@@ -138,7 +162,7 @@ const NewListing = () => {
       authorization: '',
     },
     alert:
-      'NB: This is a demo site, and for practical purposes an authorization code is required for users to submit new lisitings to the database.',
+      'NB: This is a demo site. For practical purposes an authorization code is required for users to submit lisitings.',
   };
 
   const [fields, setFields] = useState(initialState.fields);
