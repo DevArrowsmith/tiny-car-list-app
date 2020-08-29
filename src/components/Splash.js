@@ -42,7 +42,6 @@ const MainContainer = styled.div`
 const FeaturedCar = styled.div`
   height: 79.5vw;
   width: 100vw;
-  background-color: none;
   background-image: url(${frameYellow});
   background-size: contain;
   background-position: center;
@@ -52,12 +51,15 @@ const FeaturedCar = styled.div`
   justify-content: center;
   align-items: center;
 
+  ${up('sm')} {
+    height: calc(0.795 * 360px);
+    width: 360px;
+  }
+
   img {
     width: 95%;
   }
 `;
-
-
 
 const Splash = ({ selectedListing, buzzState }) => {
   return selectedListing ? (
