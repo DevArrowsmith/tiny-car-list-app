@@ -3,7 +3,7 @@ const axios = require('axios');
 const getListings = async () => {
   try {
     const res = await axios({
-      url: `http://tiny-car-list-api.herokuapp.com/listing`,
+      url: `https://tiny-car-list-api.herokuapp.com/listing`,
     });
     return res;
   } catch (error) {

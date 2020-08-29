@@ -32,8 +32,7 @@ const MainContainer = styled.div`
   padding: 10px 0 0 0;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(2px);
-  background-image: url(${(props) => props.imgurl}),
-    url(${frameYellow});
+  background-image: url(${(props) => props.imgurl}), url(${frameYellow});
   background-size: 85%, 100%;
   background-position: center 170px, center 90px;
   background-repeat: no-repeat;
@@ -95,7 +94,7 @@ const NavButton = styled(Link)`
 const LoadingMessage = styled.h2`
   width: 100vw;
   margin: 120px 0 0 0;
-  padding: 0; 
+  padding: 0;
   color: white;
   display: flex;
   flex-flow: row nowrap;

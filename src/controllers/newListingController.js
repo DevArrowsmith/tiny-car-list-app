@@ -4,7 +4,7 @@ const postListing = async (newListing) => {
   try {
     const res = await axios({
       method: 'post',
-      url: `http://tiny-car-list-api.herokuapp.com/listing`,
+      url: `https://tiny-car-list-api.herokuapp.com/listing`,
       data: newListing,
       headers: {
         Authorizer: newListing.authorization,
