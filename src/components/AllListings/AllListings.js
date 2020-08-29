@@ -7,10 +7,10 @@ import HeaderBar from '../library/HeaderBar';
 import road2 from '../../assets/images/roads/road2.png';
 
 const AllListingsContainer = styled.div`
-  height: fit-content;
+  min-height: calc(100vh - 120px - 5px);
   width: calc(100vw - 10px);
   margin: 120px 0 0 0;
-  padding: 5px;
+  padding: 5px 0 0 0;
   background: url(${road2}) no-repeat center center fixed;
   background-size: cover;
   display: flex;
