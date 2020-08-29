@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import CardGenerator from './CardGenerator';
 import FilterMenu from './FilterMenu/FilterMenu';
+import HeaderBar from '../library/HeaderBar';
 import road2 from '../../assets/images/roads/road2.png';
 
 const AllListingsContainer = styled.div`
@@ -16,35 +17,6 @@ const AllListingsContainer = styled.div`
   flex-flow: row wrap;
   justify-content: center;
   align-items: flex-start;
-`;
-
-const Header = styled.div`
-  position: fixed;
-  top: 60px;
-  left: 0px;
-  height: 60px;
-  width: 100vw;
-  background: black;
-  border-bottom: 1px solid #454545;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1;
-`;
-
-const HeaderText = styled.span`
-  height: 60px;
-  margin: 0 0 0 20px;
-  border-bottom: 1px solid #454545;
-  font-family: 'Contrail One', Helvetica, sans-serif;
-  font-size: 1.5em;
-  font-weight: bold;
-  color: white;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
 `;
 
 const AllListings = ({ listings }) => {
@@ -86,8 +58,8 @@ const AllListings = ({ listings }) => {
 
   return (
     <AllListingsContainer>
-      <Header>
-        <HeaderText>Listings</HeaderText>
+      <HeaderBar>
+        <span>Listings</span>
         <FilterMenu
           filterState={filterState}
           setFilterState={setFilterState}
@@ -95,7 +67,7 @@ const AllListings = ({ listings }) => {
         >
           Search
         </FilterMenu>
-      </Header>
+      </HeaderBar>
 
       <CardGenerator listings={listings} filteredListings={filteredListings} />
     </AllListingsContainer>

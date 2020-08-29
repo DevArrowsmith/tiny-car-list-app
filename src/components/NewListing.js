@@ -1,33 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import postListing from '../controllers/newListingController';
+import HeaderBar from './library/HeaderBar'
 import road5 from '../assets/images/roads/road5.png';
-
-const Header = styled.div`
-  position: fixed;
-  top: 60px;
-  left: 0px;
-  height: 60px;
-  width: 100vw;
-  background: black;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1;
-
-  span {
-    height: 60px;
-    margin: 0 0 0 20px;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: white;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-  }
-`;
 
 const NewListingContainer = styled.div`
   min-height: calc(100vh - 120px);
@@ -191,9 +166,9 @@ const NewListing = () => {
 
   return (
     <NewListingContainer>
-      <Header>
+      <HeaderBar>
         <span>Create A New Listing</span>
-      </Header>
+      </HeaderBar>
 
       <MainContainer>
         <Intro>
