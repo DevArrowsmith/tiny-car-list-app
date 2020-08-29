@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const BuzzContainer = styled.div`
-  height: 120px;
   width: calc(100% - 30px);
-  margin: 0 0 0 30px;
+  margin: 0 0 5px 20px;
   background: none;
   display: flex;
   flex-flow: column nowrap;
@@ -15,14 +14,14 @@ const BuzzContainer = styled.div`
 
 const FontOne = styled.span`
   font-family: 'Lato';
-  font-size: 2.2em;
+  font-size: 1.8em;
   color: white;
 `;
 
 const FontTwo = styled.span`
   margin: 0 0 0 20px;
   font-family: 'Contrail One', Helvetica, sans-serif;
-  font-size: 2.2em;
+  font-size: 1.8em;
   color: white;
 `;
 

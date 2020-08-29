@@ -6,10 +6,7 @@ import { Link } from 'react-router-dom';
 import breakpoints from '../styles/breakpoints';
 import Buzzphrase from './library/Buzzphrase';
 import Modelphrase from './library/Modelphrase';
-import frameRed from '../assets/images/FrameRed.png';
-import frameBlack from '../assets/images/FrameBlack.png';
 import frameYellow from '../assets/images/FrameYellowB.png';
-import frame from '../assets/images/Frame.png';
 import road1 from '../assets/images/roads/road1.png';
 
 const SplashContainer = styled.div`
@@ -29,13 +26,8 @@ const MainContainer = styled.div`
   width: 100%;
   max-width: 360px;
   margin: 60px 0 0 0;
-  padding: 10px 0 0 0;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(2px);
-  background-image: url(${(props) => props.imgurl}), url(${frameYellow});
-  background-size: 85%, 100%;
-  background-position: center 170px, center 90px;
-  background-repeat: no-repeat;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
@@ -46,11 +38,29 @@ const MainContainer = styled.div`
   }
 `;
 
+const FeaturedCar = styled.div`
+  height: 79.5vw;
+  width: 100vw;
+  background-color: none;
+  background-image: url(${frameYellow});
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 95%;
+  }
+`;
+
 const ButtonContainer = styled.div`
   height: 40px;
   width: 100%;
+  padding: 5px 0 0 0;
   max-width: 360px;
-  padding: 20px 0 0 0;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
@@ -105,10 +115,14 @@ const Splash = ({ selectedListing, buzzState }) => {
   return selectedListing ? (
     <ThemeProvider theme={breakpoints}>
       <SplashContainer>
-        <MainContainer
-          imgurl={`https://res.cloudinary.com/gummicode/image/upload/tinycarlist/${selectedListing.imgref}.png`}
-        >
+        <MainContainer>
           <Buzzphrase buzzState={buzzState} />
+          <FeaturedCar>
+            <img
+              src={`https://res.cloudinary.com/gummicode/image/upload/tinycarlist/${selectedListing.imgref}.png`}
+              alt="A featured car"
+            />
+          </FeaturedCar>
           <Modelphrase
             make={selectedListing.make}
             model={selectedListing.model}
