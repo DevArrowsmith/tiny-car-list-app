@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 import { up } from 'styled-breakpoints';
 import breakpoints from '../styles/breakpoints';
+import LoadingMessage from './library/LoadingMessage';
 import Buzzphrase from './library/Buzzphrase';
 import Modelphrase from './library/Modelphrase';
 import SplashButtons from './library/SplashButtons';
@@ -56,15 +57,7 @@ const FeaturedCar = styled.div`
   }
 `;
 
-const LoadingMessage = styled.h2`
-  width: 100vw;
-  margin: 120px 0 0 0;
-  padding: 0;
-  color: white;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-`;
+
 
 const Splash = ({ selectedListing, buzzState }) => {
   return selectedListing ? (
@@ -88,7 +81,7 @@ const Splash = ({ selectedListing, buzzState }) => {
     </ThemeProvider>
   ) : (
     <ThemeProvider theme={breakpoints}>
-      <LoadingMessage>Loading...</LoadingMessage>
+      <LoadingMessage />
     </ThemeProvider>
   );
 };
