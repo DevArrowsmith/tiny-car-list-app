@@ -1,19 +1,23 @@
 {
   "files": {
-    "main.js": "/tiny-car-list-app/static/js/main.d8f48acb.chunk.js",
-    "main.js.map": "/tiny-car-list-app/static/js/main.d8f48acb.chunk.js.map",
+    "main.js": "/tiny-car-list-app/static/js/main.29abb062.chunk.js",
+    "main.js.map": "/tiny-car-list-app/static/js/main.29abb062.chunk.js.map",
     "runtime-main.js": "/tiny-car-list-app/static/js/runtime-main.27bb3320.js",
     "runtime-main.js.map": "/tiny-car-list-app/static/js/runtime-main.27bb3320.js.map",
-    "static/js/2.f5005b57.chunk.js": "/tiny-car-list-app/static/js/2.f5005b57.chunk.js",
-    "static/js/2.f5005b57.chunk.js.map": "/tiny-car-list-app/static/js/2.f5005b57.chunk.js.map",
+    "static/js/2.0964e83a.chunk.js": "/tiny-car-list-app/static/js/2.0964e83a.chunk.js",
+    "static/js/2.0964e83a.chunk.js.map": "/tiny-car-list-app/static/js/2.0964e83a.chunk.js.map",
     "index.html": "/tiny-car-list-app/index.html",
-    "precache-manifest.64fa8d94e00c4a7a51c06cdf8b92af0b.js": "/tiny-car-list-app/precache-manifest.64fa8d94e00c4a7a51c06cdf8b92af0b.js",
+    "precache-manifest.0982875185baa0d68bfdf6b524c2a55b.js": "/tiny-car-list-app/precache-manifest.0982875185baa0d68bfdf6b524c2a55b.js",
     "service-worker.js": "/tiny-car-list-app/service-worker.js",
-    "static/js/2.f5005b57.chunk.js.LICENSE.txt": "/tiny-car-list-app/static/js/2.f5005b57.chunk.js.LICENSE.txt"
+    "static/js/2.0964e83a.chunk.js.LICENSE.txt": "/tiny-car-list-app/static/js/2.0964e83a.chunk.js.LICENSE.txt",
+    "static/media/FrameRed.png": "/tiny-car-list-app/static/media/FrameRed.255218e8.png",
+    "static/media/FrameYellowB.png": "/tiny-car-list-app/static/media/FrameYellowB.741f20c3.png",
+    "static/media/road1.png": "/tiny-car-list-app/static/media/road1.d503f2a3.png",
+    "static/media/road2.png": "/tiny-car-list-app/static/media/road2.44a1aeae.png"
   },
   "entrypoints": [
     "static/js/runtime-main.27bb3320.js",
-    "static/js/2.f5005b57.chunk.js",
-    "static/js/main.d8f48acb.chunk.js"
+    "static/js/2.0964e83a.chunk.js",
+    "static/js/main.29abb062.chunk.js"
   ]
 }
