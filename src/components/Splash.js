@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import LoadingMessage from './library/LoadingMessage';
 import Buzzphrase from './library/Buzzphrase';
-import FeaturedCar from './library/FeaturedCar';
+import FeaturedCar from './library/FeaturedListing';
 import Modelphrase from './library/Modelphrase';
 import SplashButtons from './library/SplashButtons';
 import road1 from '../assets/images/roads/road1.png';

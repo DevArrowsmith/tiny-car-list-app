@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import HeaderBar from './library/HeaderBar';
 import Card from './AllListings/Card';
+import road4 from '../assets/images/roads/road4.png';
 
 const ListingContainer = styled.div`
-  height: calc(100vh - 60px);
-  width: 100vw;
+  min-height: calc(100vh - 60px);
   margin: 60px 0 0 0;
-  padding: 0;
+  background-image: url(${road4});
+  background-position: bottom;
+  background-size: cover;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -22,12 +25,24 @@ const LoadingMessage = styled.h1`
 `;
 
 const Listing = ({ selectedListing }) => {
-  return selectedListing ? (
-    <ListingContainer>
-      <Card listingData={selectedListing} />
-    </ListingContainer>
-  ) : (
-    <LoadingMessage>Loading...</LoadingMessage>
+  const loadingCondition = () => {
+    return selectedListing ? (
+      <>
+        <ListingContainer>
+          <Card listingData={selectedListing} />
+        </ListingContainer>
+      </>
+    ) : (
+      <LoadingMessage>Loading...</LoadingMessage>
+    );
+  };
+  return (
+    <>
+      <HeaderBar>
+        <span>Featured Listing</span>
+      </HeaderBar>
+      {loadingCondition()}
+    </>
   );
 };
 

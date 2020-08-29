@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import frameYellow from '../../assets/images/FrameYellow.png';
 
-const FeaturedCar = styled.div`
+const FeaturedListing = styled.div`
   height: 79.5vw;
   width: 100vw;
   max-height: calc(0.795 * 360px);
@@ -38,4 +38,4 @@ const FeaturedCar = styled.div`
   }
 `;
 
-export default FeaturedCar;
+export default FeaturedListing;
