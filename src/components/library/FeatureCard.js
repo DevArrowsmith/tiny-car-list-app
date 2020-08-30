@@ -5,7 +5,10 @@ import framePurple from '../../assets/images/FramePurple.png';
 
 const FeatureCardImage = styled.div`
   height: 79.5vw;
+  max-height: calc(360px * 0.795);
   width: 100vw;
+  max-width: 360px;
+  border-radius: 20px;
   background-image: url(${framePurple});
   background-size: contain;
   background-position: center;
@@ -22,6 +25,7 @@ const FeatureCardImage = styled.div`
 
 const FeatureCardContainer = styled.div`
   min-height: calc(100vh - 120px);
+  width: 100vw;
   color: white;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(2px);
@@ -138,3 +142,8 @@ FeatureCard.propTypes = {
 };
 
 export default FeatureCard;
+
+
+// At a certain screen size the card will become flex-flow: row nowrap.
+// The text will appear to one side, and the image will appear at the other side,
+// like a flashcard.
