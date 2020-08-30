@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import HeaderBar from './library/HeaderBar';
-import Card from './AllListings/Card';
+import FeatureCard from './library/FeatureCard';
 import road4 from '../assets/images/roads/road4.png';
 
 const ListingContainer = styled.div`
-  min-height: calc(100vh - 60px);
-  margin: 60px 0 0 0;
+  min-height: calc(100vh - 120px);
+  margin: 120px 0 0 0;
   background-image: url(${road4});
   background-position: bottom;
   background-size: cover;
@@ -29,13 +29,14 @@ const Listing = ({ selectedListing }) => {
     return selectedListing ? (
       <>
         <ListingContainer>
-          <Card listingData={selectedListing} />
+          <FeatureCard listingData={selectedListing} />
         </ListingContainer>
       </>
     ) : (
       <LoadingMessage>Loading...</LoadingMessage>
     );
   };
+
   return (
     <>
       <HeaderBar>

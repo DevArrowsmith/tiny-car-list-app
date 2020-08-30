@@ -35,7 +35,6 @@ const MainContainer = styled.div`
     margin: 60px;
     padding: 60px 50px;
     border-radius: 20px;
-
   }
 `;
 
@@ -54,7 +53,7 @@ const Intro = styled.p`
 `;
 
 const FormStyles = styled.form`
-  width: 280px;
+  width: 320px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: start;
@@ -62,7 +61,7 @@ const FormStyles = styled.form`
 `;
 
 const FormElement = styled.div`
-  width: 280px;
+  width: 320px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: start;

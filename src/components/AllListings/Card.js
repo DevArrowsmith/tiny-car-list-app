@@ -96,7 +96,7 @@ const Card = ({ listingData }) => {
       <TextFrame> {`${make} ${model} ${year}`} </TextFrame>
       <TextFrame> {`£${price}`} </TextFrame>
       <TextFrame> {`${city}, UK`} </TextFrame>
-      <ContactButton href={`mailto:${email}`} target="_blank">
+      <ContactButton href={`mailto:${email}`} target="_blank" rel="noreferrer">
         Contact Seller
       </ContactButton>
     </CardContainer>
