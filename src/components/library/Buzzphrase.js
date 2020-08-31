@@ -18,8 +18,8 @@ const FontOne = styled.span`
   color: white;
 
   @media (min-width: 768px) {
-  font-size: 3em;
-}
+    font-size: 3em;
+  }
 `;
 
 const FontTwo = styled.span`
@@ -29,8 +29,8 @@ const FontTwo = styled.span`
   color: white;
 
   @media (min-width: 768px) {
-  font-size: 3em;
-}
+    font-size: 3em;
+  }
 `;
 
 const BuzzPhrase = ({ buzzState }) => {
