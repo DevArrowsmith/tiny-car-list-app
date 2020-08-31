@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import framePurple from '../../assets/images/FramePurple.png';
+import framePurpleSmall from '../../assets/images/FramePurpleSmall.png';
 
 const FeatureCardImage = styled.div`
   height: 79.5vw;
@@ -18,8 +19,19 @@ const FeatureCardImage = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media (min-width: 768px) {
+    max-height: 320px;
+    max-width: 320px;
+    background-image: url(${framePurpleSmall});
+    border-radius: 0 20px 20px 0;
+  }
+
   img {
     width: 95%;
+
+    @media (min-width: 768px) {
+      width: 100%;
+    }
   }
 `;
 
@@ -34,9 +46,15 @@ const FeatureCardContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
 
-  h2 {
-    font-size: 1.8em;
-    margin: 10px;
+  @media (min-width: 768px) {
+    min-height: auto;
+    width: auto;
+    margin: 60px 0 0 0;
+    border-radius: 20px;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   .feature-text {
@@ -45,11 +63,29 @@ const FeatureCardContainer = styled.div`
     flex-flow: column nowrap;
     align-items: flex-start;
     justify-content: flex-start;
+
+    @media (min-width: 768px) {
+      max-width: calc (768px - 320px - 80px);
+      margin: 10px 0 0 30px;
+    }
+  }
+
+  h2 {
+    font-size: 1.8em;
+    margin: 10px;
+
+    @media (min-width: 768px) {
+      margin: 10px 20px 10px 0;
+    }
   }
 
   span {
-    font-size: 1.6em;
+    font-size: 1.7em;
     margin: 3px 0 0 0;
+
+    @media (min-width: 768px) {
+      margin: 0 20px 0 0;
+    }
   }
 
   .button-container {
@@ -57,6 +93,12 @@ const FeatureCardContainer = styled.div`
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
+
+    @media (min-width: 768px) {
+      width: calc (100% - 20px);
+      margin: 0 20px 0 0;
+      justify-content: flex-start;
+    }
   }
 
   a {
@@ -66,7 +108,7 @@ const FeatureCardContainer = styled.div`
     margin: 20px 0 25px 0;
     padding: 0 10px;
     color: black;
-    font-size: 1.6em;
+    font-size: 1.7em;
     font-weight: bold;
     background: whitesmoke;
     border-radius: 10px;
@@ -99,15 +141,15 @@ const FeatureCard = ({ listingData }) => {
 
   return (
     <FeatureCardContainer>
-      <h2>
-        {make}
-        &nbsp;
-        {model}
-      </h2>
       <FeatureCardImage>
         <img src={imgurl} alt="Featured car." />
       </FeatureCardImage>
       <div className="feature-text">
+        <h2>
+          {make}
+          &nbsp;
+          {model}
+        </h2>
         <span>
           Year:&nbsp;
           {year}
@@ -117,7 +159,8 @@ const FeatureCard = ({ listingData }) => {
           {city}
         </span>
         <span>
-          Price: £{price}
+          Price: £
+{price}
         </span>
         <div className="button-container">
           <a href={`mailto:${email}`} target="_blank" rel="noreferrer">
@@ -142,7 +185,6 @@ FeatureCard.propTypes = {
 };
 
 export default FeatureCard;
-
 
 // At a certain screen size the card will become flex-flow: row nowrap.
 // The text will appear to one side, and the image will appear at the other side,

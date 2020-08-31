@@ -15,7 +15,11 @@ const ListingContainer = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-`;
+  
+  @media (min-width: 768px) {
+    justify-content: flex-start;
+  }
+  `;
 
 const LoadingMessage = styled.h1`
   font-family: 'Contrail One', Helvetica, sans-serif;
