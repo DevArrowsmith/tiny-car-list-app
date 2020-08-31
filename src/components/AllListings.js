@@ -8,7 +8,7 @@ import road2 from '../assets/images/roads/road2.png';
 
 const AllListingsContainer = styled.div`
   min-height: calc(100vh - 120px - 5px);
-  width: calc(100vw - 10px);
+  width: calc(100vw);
   margin: 120px 0 0 0;
   padding: 5px 0 0 0;
   background: url(${road2}) no-repeat center center fixed;
