@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/tiny-car-list-app/precache-manifest.c070f849229ab06096004d6356b4b2d2.js"
+  "/tiny-car-list-app/precache-manifest.588ed487c533d01988c8e66b39f33876.js"
 );
 
 self.addEventListener('message', (event) => {
