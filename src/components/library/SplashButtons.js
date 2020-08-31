@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const ButtonContainer = styled.div`
   height: 40px;
   width: 100%;
-  padding: 5px 0 0 0;
+  padding: 5px 0 20px 0;
   max-width: 360px;
   display: flex;
   flex-flow: row nowrap;
