@@ -12,10 +12,9 @@ const ModelContainer = styled.div`
   justify-content: flex-start;
   align-items: flex-end;
 
-  div{
+  div {
     display: flex;
     flex-flow: column nowrap;
-    justify-conten: flex-start;
     align-items: flex-start;
   }
 `;
@@ -25,9 +24,8 @@ const FontOne = styled.span`
   font-size: 1.8em;
   color: white;
   @media (min-width: 768px) {
-  font-size: 2.8em;
-}
-  
+    font-size: 2.8em;
+  }
 `;
 
 const FontTwo = styled.span`
@@ -36,17 +34,17 @@ const FontTwo = styled.span`
   font-size: 1.8em;
   color: white;
   @media (min-width: 768px) {
-  font-size: 3em;
-}
+    font-size: 3em;
+  }
 `;
 
 const ModelPhrase = ({ make, model }) => {
   return (
     <ModelContainer>
       <div>
-      <FontOne>the</FontOne>
-      <FontTwo>{make}</FontTwo>
-      <FontTwo>{model}</FontTwo>
+        <FontOne>the</FontOne>
+        <FontTwo>{make}</FontTwo>
+        <FontTwo>{model}</FontTwo>
       </div>
     </ModelContainer>
   );

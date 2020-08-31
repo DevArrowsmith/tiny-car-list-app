@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import GlobalStyles from '../styles/GlobalStyles';
 import Navbar from './Navbar/Navbar';
-import Splash from './Splash';
-import Listing from './Listing';
-import AllListings from './AllListings/AllListings';
+import SplashPage from './SplashPage';
+import FeaturedListing from './FeaturedListing';
+import AllListings from './AllListings';
 import NewListing from './NewListing';
 import getListings from '../controllers/listingsController';
 import buzzwords from '../assets/buzzwords';
@@ -46,7 +46,7 @@ const App = () => {
           exact
           path="/"
           component={() => (
-            <Splash
+            <SplashPage
               selectedListing={listingsState[selectedState]}
               buzzState={buzzState}
             />
@@ -56,7 +56,7 @@ const App = () => {
           exact
           path="/Listing"
           component={() => (
-            <Listing selectedListing={listingsState[selectedState]} />
+            <FeaturedListing selectedListing={listingsState[selectedState]} />
           )}
         />
         <Route

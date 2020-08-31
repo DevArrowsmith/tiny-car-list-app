@@ -14,7 +14,7 @@ const ButtonContainer = styled.div`
   @media (min-width: 768px) {
     height: auto;
     max-width: 100%;
-    padding: 20px 0 0 0;
+    padding: 20px 0 30px 0;
   }
 `;
 
@@ -25,7 +25,6 @@ const NavButton = styled(Link)`
   max-width: 140px;
   font-size: 1.2em;
   color: black;
-  font-family: 'Contrail One', Helvetica, sans-serif;
   font-weight: bold;
   background: whitesmoke;
   border-radius: 10px;

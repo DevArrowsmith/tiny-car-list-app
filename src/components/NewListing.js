@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import postListing from '../controllers/newListingController';
-import HeaderBar from './library/HeaderBar'
+import HeaderBar from './library/HeaderBar';
 import road5 from '../assets/images/roads/road5.png';
 
 const NewListingContainer = styled.div`
@@ -113,7 +113,7 @@ const Footer = styled.div`
   height: fit-content;
   width: 80vw;
   max-width: 320px;
-  color: #FDFD9B;
+  color: #fdfd9b;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
