@@ -2,8 +2,8 @@
 
 ## Background
 
-This application is a full-stack automobile trading site.
-The application is spread between two repositories. This repo contains the front-end. The back-end can be found [here](https://github.com/DevArrowsmith/tiny-car-list-api). 
+This application is a full-stack automobile trading site.  
+The application is spread between two repositories. This repo contains the front-end. The back-end can be found [here](https://github.com/DevArrowsmith/tiny-car-list-api).   
 The front-end is hosted on [GitHub Pages](https://devarrowsmith.github.io/tiny-car-list-app/#/). The back-end is hosted on [Heroku](https://dashboard.heroku.com/).
 
 ---
@@ -35,7 +35,7 @@ To follow
 
 ## Installation
 
-The front-end of this application is hosted on [GitHub Pages](https://devarrowsmith.github.io/tiny-car-list-app/#/NewListing) and can be run from there.
+The front-end of this application is hosted on [GitHub Pages](https://devarrowsmith.github.io/tiny-car-list-app/#/NewListing) and can be run from there.  
 The back-end is hosted on [Heroku](https://dashboard.heroku.com/). Please see the [back-end repository](https://github.com/DevArrowsmith/tiny-car-list-api) for further information.
 
 To install this repo locally:
