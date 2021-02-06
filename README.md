@@ -29,7 +29,16 @@ The feactures of the API are detailed in the [back-end repo](https://github.com/
 
 ## Screenshots
 
-To follow
+<img src="readme_assets/screen01.png" width="40%"
+alt="Screenshot of the homepage / splash screen of the app. A grey navbar shows the app's name (far left) and a burger menu (far right). The rest of the page is taken up by a splash. A featured car is shown in the middle of the screen. A semi-randomly generated buzzphrase is shown in the top left. The car's make and model is shown in the bottom right. two buttosna re shown at the bottom of the page. One reads 'View Listing!'. The other reads 'All Cars'. The page background is a photograph of a desert highway at day."/> <img src="readme_assets/screen04.png" width="40%"
+alt="Screenshot of the main listings page of the app. A grid of 'cards' is displayed over an image of an alpine road. Each card shows an image of a car, and text describing the car's make, model, cost and location. Each card also has a Contact Seller button. A 'Search' menu in the navbar has been opened. Several filters are shown in a menu to the right of the screen. These are Price, Make and Location."/> 
+
+<img src="readme_assets/screen02.png" width="40%"
+alt="Screenshot of a Featured Listing page. A card is shown over a background of a metal road bridge at night, lit in red. The card is in landscape orientation. The right side shows an image of the featured car. The left side displays the car's make, model, year of production, location and price, as well as a 'Contact Seller!' button."/> <img src="readme_assets/screen03.png" width="40%"
+alt="Screenshot of the New Listing form page. A card is shown over a background of a top-down view of a road at night, taken with high exposure to show the cars' headlights as blurs in  white and yellow. The card is in portrait orientation. It invites the user to fill out the form in order to create a new listing. The form's fields are Make, Model, Year, Price in pounds sterling, Location, Email and Authorisation. the Authorisation field takes a password and is used to control access to the backend database in this version of the site. Finally the card shows a 'Submit Listing!' button and a disclaimer explaining that this is a demo site and a password is required to submit entries."/> 
+
+<img src="readme_assets/menu01.gif" width="20%"
+alt="A gif of the burger menu being clicked repeatedly. When clicked the burger button animates and transforms into a cross, and the menu slides onto the screen from the right.. When clicked again it animates and turns back into a burger, and the menu slides off the right of the screen."/> 
 
 ---
 
@@ -56,6 +65,7 @@ The front-end was built with [React](https://github.com/facebook/react) and styl
 
 - Add a facility to upload images with new listings.
 - Modify the filters in the listings page to procedurally create selectors from the API data. Currently selectors are hard-coded.
+- Modify the 'Contact Seller' buttons so that these direct to a contact form rather than providing the seller's email address.
 
 ---
 
