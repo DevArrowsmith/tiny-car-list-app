@@ -10,7 +10,7 @@ The front-end is hosted on [GitHub Pages](https://devarrowsmith.github.io/tiny-c
 
 ## Motivation
 
-I wanted to create a full-stack trading application with a database of items for sale. I wanted to include images of merchandise but this raised the issue of ensuring images were appropriately formatted to display well in resuseable components.
+I wanted to create a full-stack trading application with a database of items for sale. I wanted to include images of merchandise but this raised the issue of ensuring images were appropriately formatted to display well in resusable components.
 
 I decided to create a listings site for automobiles, using pictures of toy cars in place of real cars. I discovered several collectors' sites that included images of Hotwheels cars in a standardised format, allowing me to generate a pool of assets that could be rendered in procedurally generated components with minimal formatting issues.  
 
@@ -20,17 +20,17 @@ I aimed to include the following features in the front-end:
 - A splash page with a randomly selected featured car
 - A specially styled listing page for the featured car
 - A filterable listings page with procedurally generated 'cards' displaying cars for sale
-- A nav bar with styled & animated menus, including an ainmated burger menu
+- A nav bar with styled & animated menus, including an animated burger menu
 - A form for submitting new listings to the database
 
-The feactures of the API are detailed in the [back-end repo](https://github.com/DevArrowsmith/tiny-car-list-api). 
+The features of the API are detailed in the [back-end repo](https://github.com/DevArrowsmith/tiny-car-list-api). 
 
 ---
 
 ## Screenshots
 
 <img src="readme_assets/screen01.png" width="40%"
-alt="Screenshot of the homepage / splash screen of the app. A grey navbar shows the app's name (far left) and a burger menu (far right). The rest of the page is taken up by a splash. A featured car is shown in the middle of the screen. A semi-randomly generated buzzphrase is shown in the top left. The car's make and model is shown in the bottom right. two buttosna re shown at the bottom of the page. One reads 'View Listing!'. The other reads 'All Cars'. The page background is a photograph of a desert highway at day."/> <img src="readme_assets/screen04.png" width="40%"
+alt="Screenshot of the homepage / splash screen of the app. A grey navbar shows the app's name (far left) and a burger menu (far right). The rest of the page is taken up by a splash. A featured car is shown in the middle of the screen. A semi-randomly generated buzzphrase is shown in the top left. The car's make and model is shown in the bottom right. two buttons are shown at the bottom of the page. One reads 'View Listing!'. The other reads 'All Cars'. The page background is a photograph of a desert highway at day."/> <img src="readme_assets/screen04.png" width="40%"
 alt="Screenshot of the main listings page of the app. A grid of 'cards' is displayed over an image of an alpine road. Each card shows an image of a car, and text describing the car's make, model, cost and location. Each card also has a Contact Seller button. A 'Search' menu in the navbar has been opened. Several filters are shown in a menu to the right of the screen. These are Price, Make and Location."/> 
 
 <img src="readme_assets/screen02.png" width="40%"
@@ -38,7 +38,7 @@ alt="Screenshot of a Featured Listing page. A card is shown over a background of
 alt="Screenshot of the New Listing form page. A card is shown over a background of a top-down view of a road at night, taken with high exposure to show the cars' headlights as blurs in  white and yellow. The card is in portrait orientation. It invites the user to fill out the form in order to create a new listing. The form's fields are Make, Model, Year, Price in pounds sterling, Location, Email and Authorisation. the Authorisation field takes a password and is used to control access to the backend database in this version of the site. Finally the card shows a 'Submit Listing!' button and a disclaimer explaining that this is a demo site and a password is required to submit entries."/> 
 
 <img src="readme_assets/menu01.gif" width="20%"
-alt="A gif of the burger menu being clicked repeatedly. When clicked the burger button animates and transforms into a cross, and the menu slides onto the screen from the right.. When clicked again it animates and turns back into a burger, and the menu slides off the right of the screen."/> 
+alt="A gif of the burger menu being clicked repeatedly. When clicked the burger button animates and transforms into a cross, and the menu slides onto the screen from the right. When clicked again it animates and turns back into a burger, and the menu slides off the right of the screen."/> 
 
 ---
 
